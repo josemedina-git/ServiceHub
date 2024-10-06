@@ -737,12 +737,12 @@ a:focus {
 .gradient-custom {
 
   height: 100%;
-  
+
   background: #6a11cb;
 
   background: -webkit-linear-gradient(to right, #864ddf, #203376);
 
-  background: linear-gradient(to right, #864ddf, #203376)
+  background: linear-gradient(to right, #864ddf, #203376);
 }
 
 .login-box {

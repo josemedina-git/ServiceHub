@@ -32,20 +32,24 @@
                                 <p class="text-dark mb-5">Ingresa con tu correo y contraseña!</p>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="email" id="email" class="form-control form-control-lg bg-light border-dark"
+                                    <input type="email" id="email"
+                                        class="form-control form-control-lg bg-light border-dark"
                                         placeholder="Correo" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="password" id="password" class="form-control form-control-lg bg-light border-dark"
+                                    <input type="password" id="password"
+                                        class="form-control form-control-lg bg-light border-dark"
                                         placeholder="Contraseña" />
                                 </div>
 
-                                <button class="btn btn-outline-light btn-lg px-5 btn-primary" type="button" onclick="login()">Iniciar sesión</button>
+                                <button class="btn btn-outline-light btn-lg px-5 btn-primary" type="button"
+                                    onclick="login()">Iniciar sesión</button>
                             </div>
 
                             <div>
-                                <p class="mb-0">¿No tienes una cuenta? <a href="#!" class="text-dark fw-bold">Registrarse</a></p>
+                                <p class="mb-0">¿No tienes una cuenta? <a href="singup.html"
+                                        class="text-dark fw-bold">Registrarse</a></p>
                             </div>
                         </div>
                     </div>
@@ -58,7 +62,7 @@
     <script>
         function login() {
             // Funcion credenciales de prueba
-            const correctEmail = "cris@example.com";
+            const correctEmail = "cris@gmail.com";
             const correctPassword = "123456";
 
             const email = document.getElementById("email").value;

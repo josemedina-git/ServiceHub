@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- Fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="gradient-custom min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="container h-auto">
+            <div class="row d-flex justify-content-center align-items-center h-auto">
+                <div class="col-lg-12 col-xl-8">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-4">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-4 mt-3">Registrarse</p>
+
+                                    <form id="registrationForm" class="mx-1 mx-md-3">
+                                        <div class="d-flex flex-row align-items-center mb-3">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="name" class="form-control"
+                                                    placeholder="Ingresa tu Nombre" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-3">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="surname" class="form-control"
+                                                    placeholder="Ingresa tu Apellido" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-3">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="email" id="email" class="form-control"
+                                                    placeholder="Ingresa tu Correo" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-3">
+                                            <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="tel" id="phone" class="form-control"
+                                                    placeholder="Número de teléfono" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-3">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="password" id="password" class="form-control"
+                                                    placeholder="Ingresa tu contraseña" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-3">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="password" id="confirmPassword" class="form-control"
+                                                    placeholder="Confirmar contraseña" required />
+                                            </div>
+                                        </div>
+
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="terms"
+                                            required />
+
+                                        <div class="form-check d-flex justify-content-center mb-4">
+                                            <label class="form-check-label" for="terms">
+                                                Estoy de acuerdo con los <a href="#!">Terminos y condiciones</a>
+                                            </label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-3">
+                                            <button type="submit" class="btn btn-primary btn-lg">Crear Cuenta</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                    <img src="images/singup.jpg" class="img-fluid" alt="Sample image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/form.js">
+    </script>
+</body>
+
+</html>
