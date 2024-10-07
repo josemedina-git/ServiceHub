@@ -323,10 +323,10 @@ a:focus {
 
 .service_section {
   text-align: center;
-  color: #f9fcfb;
-  background-image: url(../images/service-bg.png);
+  color: #383a90;
+
   background-size: 100% 100%;
-  padding-top: 275px;
+  padding-top: 50px;
   padding-bottom: 125px;
   background-repeat: no-repeat;
   margin-top: -150px;
@@ -849,5 +849,17 @@ a:focus {
   background-color: #45a049;
 }
 
+.nav-link {
+  white-space: nowrap;
+}
 
-
+.nav-link {
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px; 
+  border-radius: 5px; 
+}               
+.nav-link:hover {
+  background-color: #6a1b9a; 
+  color: #ffffff; 
+}
