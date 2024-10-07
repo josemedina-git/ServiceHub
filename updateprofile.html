@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar perfil</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM9K0naUQ7QK/o6dPoXJv6bG9fU6iC3XQKnFw" crossorigin="anonymous">
+    
+</head>
+
+<body>
+
+    <div class="container-center-update">
+        <div class="update-box">
+            <h2>Actualizar Perfil</h2>
+
+            <div class="profile-pic">
+                <img src="https://via.placeholder.com/120" id="profileImage" alt="Foto de perfil">
+            </div>
+
+            <div class="upload-btn">
+                <label for="profileUpload"><i class="fas fa-upload me-2"></i> Subir Foto</label>
+                <input type="file" id="profileUpload" accept="image/*" onchange="loadProfileImage(event)">
+            </div>
+
+            <form id="updateProfileForm">
+                <input type="text" id="name" class="form-control" placeholder="Nombre" required>
+                <input type="text" id="surname" class="form-control" placeholder="Apellido" required>
+                <input type="email" id="email" class="form-control" placeholder="Correo" required>
+                <input type="tel" id="phone" class="form-control" placeholder="Teléfono" required>
+                <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña"
+                    required>
+
+                <button type="submit">Aceptar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function loadProfileImage(event) {
+            const output = document.getElementById('profileImage');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
