@@ -9,6 +9,7 @@
   <meta name="author" content=""/>
 
   <title>ServiceHub</title>
+  <link rel="icon" type="image/png" href="images/icono.ico">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
@@ -16,14 +17,110 @@
   <link href="css/responsive.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-      .search-icon {
-          color: white;
-          cursor: pointer;
-      }
+    .search-icon {
+      color: white;
+      cursor: pointer;
+    }
+    /* Estilos para el panel de filtros */
+    .filter-panel {
+      background-color: #ffffff;
+      padding: 15px;
+      margin-top: 60px;
+      position: absolute; /* Cambiar a absolute */
+      left: 20px; /* Posición del filtro */
+      top: 100px; /* Posición desde la parte superior */
+      width: 250px;
+      height: auto;
+      overflow-y: auto;
+      z-index: 1000; /* Asegura que el panel de filtros esté por encima de otros elementos */
+    }
+
+    .filter-panel-2 {
+      background-color: #ffffff;
+      padding: 15px;
+      margin-top: 290px;
+      position: absolute; /* Cambiar a absolute */
+      left: 20px; /* Posición del filtro */
+      top: 100px; /* Posición desde la parte superior */
+      width: 250px;
+      height: auto;
+      overflow-y: auto;
+      z-index: 1000; /* Asegura que el panel de filtros esté por encima de otros elementos */
+    }
+
+    /* Ajustes de tamaño y márgenes */
+    .container-fluid {
+      padding-top: 20px; /* Espacio desde la parte superior */
+    }
+
+    .filter-heading {
+      font-size: 14px; /* Tamaño de fuente más pequeño */
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .filter-checkbox {
+      margin-bottom: 10px;
+      font-size: 12px; /* Tamaño de fuente más pequeño */
+    }
   </style>
 </head>
 
 <body class="sub_page">
+  <!-- Filtros - Checklists en el lado izquierdo -->
+  <div class="filter-panel">
+    <h5 class="filter-heading">Filtrar por:</h5>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter1">
+      <label for="filter1">Plomería</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter2">
+      <label for="filter2">Obras y Remodelaciones</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter3">
+      <label for="filter3">Limpieza del Hogar</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter4">
+      <label for="filter4">Jardinería</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter5">
+      <label for="filter5">Mudanza</label>
+    </div>
+  </div>
+
+  <div class="filter-panel-2">
+    <h5 class="filter-heading">Filtrar por precio:</h5>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter1">
+      <label for="filter1">$50 - $100</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter2">
+      <label for="filter2">$101 - $200</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter3">
+      <label for="filter3">$201 - $500</label>
+    </div>
+
+    <div class="filter-checkbox">
+      <input type="checkbox" id="filter4">
+      <label for="filter4">+$500</label>
+    </div>
+  </div>
+
   <div class="hero_area">
     <header class="header_section">
       <div class="container-fluid">
@@ -53,10 +150,10 @@
                   </li>
                   
                   <li class="nav-item">
-                    <a class="nav-link" href="wishlist.html"><i class="fas fa-heart"></i> Lista de deseos</a>
+                    <a class="nav-link" href="wishlist.html"><i class="fas fa-heart"></i> Servicios Favoritos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="orders.html"><i class="fas fa-receipt"></i> Servicios Contratados</a>
+                    <a class="nav-link" href="orders.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="signin.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
@@ -93,13 +190,10 @@
         Bienvenido a ServiceHub
       </h2>
     </div>
-    <div class="layout_padding2">
-      <div class="img-box">
-        <img src="images/logosh.jpeg" alt="" class="small-logo"/>
-      </div>
+    <div>
       <div class="detail-box">
         <p class="large-text">
-          Encuentra el mejor talento para tu proyecto
+          Encuentra el mejor talento para tu necesidad
         </p>
       </div>
     </div>
@@ -114,7 +208,7 @@
     <div class="container">
       <div class="custom_heading-container">
         <h2>
-          Nuestros servicios
+          Servicios en tendencia
         </h2>
       </div>
       <div class="service_container layout_padding2">
@@ -124,10 +218,10 @@
           </div>
           <div class="detail-box">
             <h4>
-              Fontanería
+              Plomería
             </h4>
             <p>  
-              Servicio de fontanería profesionales para resolver cualquier problema relacionado con 
+              Servicio de plomería profesionales para resolver cualquier problema relacionado con 
               tuberías, grifos y desagües. Desde instalaciones hasta reparaciones.
             </p>
           </div>
@@ -138,7 +232,7 @@
           </div>
           <div class="detail-box">
             <h4>
-              Construcción
+              Obras y Remodelaciones
             </h4>
             <p>
               Servicios de construcción de alta calidad, desde proyectos residenciales hasta comerciales. 
@@ -149,58 +243,110 @@
         </div>
         <div class="service_box">
           <div class="img-box">
-            <img src="images/carpinteria.avif" alt=""/>
+            <img src="images/clean_home.jpg" alt=""/>
           </div>
           <div class="detail-box">
             <h4>
-              Carpintería
+              Limpieza del Hogar
             </h4>
             <p>
-              Servicio de carpintería personalizados, desde muebles a medida hasta reparaciones. 
-              Nuestro equipo se dedica a brindar calidad y precisión en cada proyecto.
+              Servicio de limpieza para todo tipo de situaciones
             </p>
           </div>
         </div>
       </div>
-      <div>
-        <a href="">
-          Más servicios
-        </a>
-      </div>
     </div>
   </section>
-
-  <!-- end service section -->
-  <!--problem section -->
-  <section class="problem_section layout_padding">
-    <div class="container">
-      <div class="custom_heading-container">
-        <h2>
-          Do you have any business problem ?
-        </h2>
-      </div>
-      <div class="layout_padding2">
-        <div class="img-box">
-          <img src="images/problem.jpg" alt=""/>
+    <!-- service section -->
+    <section class="service_section">
+      <div class="container">
+        <div class="custom_heading-container">
+          <h2>
+            Nuestros Servicios
+          </h2>
         </div>
-        <div class="detail-box">
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-            some form, by injected humour, or randomised words which don&#39;t look even slightly believable. I
-          </p>
-          <div>
-            <a href="">
-              Read More
-            </a>
+        <div class="service_container layout_padding2">
+          <div class="service_box clickable-gardening">
+            <div class="img-box">
+              <img src="images/gardening.jpg" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h4>
+                Jardinería <br/>
+                
+              </h4>
+              <p>
+                have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
+                slightly believable. If you are
+              </p>
+            </div>
+          </div>
+          <div class="service_box clickable-plumb">
+            <div class="img-box">
+              <img src="images/plumb.jpg" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h4>
+                Plomería <br/>
+                
+              </h4>
+              <p>
+                have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
+                slightly believable. If you are
+              </p>
+            </div>
+          </div>
+          <div class="service_box clickable-cleaning">
+            <div class="img-box">
+              <img src="images/clean_home.jpg" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h4>
+                Limpieza <br/>
+                de hogar
+              </h4>
+              <p>
+                have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
+                slightly believable. If you are
+              </p>
+            </div>
+          </div>
+          <div class="service_box clickable-packing">
+            <div class="img-box">
+              <img src="images/packing.jpg" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h4>
+                Mudanza <br/>
+                
+              </h4>
+              <p>
+                have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
+                slightly believable. If you are
+              </p>
+            </div>
+          </div>
+          <div class="service_box clickable-renovation">
+            <div class="img-box">
+              <img src="images/renovation.jpg" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h4>
+                Obras y <br/>
+                remodelaciones
+              </h4>
+              <p>
+                have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
+                slightly believable. If you are
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-  <!-- end problem section -->
+  <!-- end service section -->
   <!-- why section -->
-
   <section class="why_section layout_padding">
     <div class="container">
       <div class="custom_heading-container">
@@ -270,10 +416,7 @@
       </div>
     </div>
   </section>
-
-
   <!-- end why section -->
-
   <!-- client section -->
   <section class="client_section layout_padding">
     <div class="container">
@@ -372,64 +515,13 @@
     </div>
   </section>
   <!-- end client section -->
-  <!-- contact section -->
-  <section class="contact_section layout_padding">
-    <div class="container contact_heading">
-      <h2>
-        Contact Us
-      </h2>
-      <p>
-        psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      </p>
-    </div>
-    <div class="container">
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputName4">Name</label>
-            <input type="text" class="form-control" id="inputName4"/>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4"/>
-          </div>
-
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputNumber4">Phone number</label>
-            <input type="tel" class="form-control" id="inputNumber4"/>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputState">Select Service</label>
-            <select id="inputState" class="form-control">
-              <option selected=""></option>
-              <option>...</option>
-            </select>
-          </div>
-
-        </div>
-        <div class="form-group">
-          <label for="inputMessage">Message</label>
-          <input type="text" class="form-control" id="inputMessage" placeholder=""/>
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <button type="submit" class="">Send</button>
-    </div>
-    </form>
-    
-  </section>
-
-
-  <!-- end contact section -->
+  
   <div class="footer_bg">
     <!-- info section -->
     <section class="info_section layout_padding2-bottom">
       <div class="container">
-        <h3 class="">
-          BigWing
+        <h3 >
+          ServiceHub
         </h3>
       </div>
       <div class="container info_content">
@@ -439,61 +531,49 @@
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  Useful Link
+                  Navegacion
                 </h5>
               </div>
               <div class="d-flex ">
                 <ul>
                   <li>
-                    <a href="">
-                      About Us
+                    <a href="index.html">
+                      Home
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      About services
+                    <a href="service.html">
+                      Servicios
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      About Departments
+                    <a href="#">
+                      Servicios Favortios
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Services
+                    <a href="#">
+                      Servicios Agendados
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                <ul class="ml-3 ml-md-5">
-                  <li>
-                    <a href="">
-                      Loram ipusm
+                    <a href="#">
+                      Iniciar Sesion
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Loram ipusm
+                    <a href="#">
+                      Registrarse
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Loram ipusm
+                    <a href="#">
+                      Cuenta
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Loram ipusm
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Loram ipusm
+                    <a href="#">
+                      Cuenta Profesionista
                     </a>
                   </li>
                 </ul>
@@ -502,61 +582,34 @@
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  The Services
+                  Servicios Populares
                 </h5>
               </div>
               <div class="d-flex ">
                 <ul>
                   <li>
-                    <a href="">
-                      About Us
+                    <a href="gardening.html">
+                      Jardinería
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      About services
+                    <a href="plumb.html">
+                      Plomería
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      About Departments
+                    <a href="cleaning.html">
+                      Limpieza de Hogar
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Services
+                    <a href="packing.html">
+                      Mudanza
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                <ul class="ml-3 ml-md-5">
-                  <li>
-                    <a href="">
-                      Lorem ipsum dolor
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      sit amet, consectetur
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      adipiscing elit,
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      sed do eiusmod
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      tempor incididunt
+                    <a href="renovation.html">
+                      Obras y remodelaciones
                     </a>
                   </li>
                 </ul>
@@ -565,62 +618,27 @@
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  Contact Us
+                  Suscripcion Premium
                 </h5>
               </div>
               <div class="d-flex ">
                 <ul>
                   <li>
-                    <a href="">
-                      About Us
-                    </a>
+                    <p style="color: white;">Promocionamos tu servicio</p>
                   </li>
                   <li>
-                    <a href="">
-                      About services
-                    </a>
+                    <p style="color: white;">Disfruta de tu navegacion sin anuncios</p>
                   </li>
                   <li>
-                    <a href="">
-                      About Departments
-                    </a>
+                    <p style="color: white;">Obtendras recomendaciones personalizadas</p>
                   </li>
                   <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
-                    </a>
+                    <p style="color: white;">Te informaremos de las mejores ofertas de servicios</p>
                   </li>
                 </ul>
-                <ul class="ml-3 ml-md-5">
+                <ul>
                   <li>
-                    <a href="">
-                      Lorem ipsum
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      dolor sit amet,
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      consectetur
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      adipiscing
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      elit, sed do eiusmod
-                    </a>
+                    <p style="color: white;">(Profesionista)</p>
                   </li>
                 </ul>
               </div>
@@ -629,28 +647,24 @@
         </div>
         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
           <div class="social-box">
-            <a href="">
+            <a href="#">
               <img src="images/fb.png" alt=""/>
             </a>
 
-            <a href="">
+            <a href="#">
               <img src="images/twitter.png" alt=""/>
             </a>
-            <a href="">
+            <a href="#">
               <img src="images/linkedin1.png" alt=""/>
             </a>
-            <a href="">
+            <a href="#">
               <img src="images/instagram1.png" alt=""/>
             </a>
           </div>
           <div class="form_container mt-5">
-            <form action="">
-              <label for="subscribeMail">
-                Newsletter
-              </label>
-              <input type="email" placeholder="Enter Your email" id="subscribeMail"/>
+            <form action="payment.html">
               <button type="submit">
-                Subscribe
+                Suscripcion Premium
               </button>
             </form>
           </div>
@@ -671,10 +685,7 @@
     <!-- footer section -->
   </div>
 
-
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-
-
 
 </body></html>
