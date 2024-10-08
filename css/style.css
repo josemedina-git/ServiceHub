@@ -113,20 +113,18 @@ a:focus {
 }
 
 .navbar-brand {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: center; /* Alinea el logo y el texto en el centro verticalmente */
+  padding: 5px 0; /* Añade espacio arriba y abajo del navbar */
 }
 
 .navbar-brand span {
-  font-size: 20px;
-  font-weight: 700;
-  color: #f9fcfb;
-  margin-top: 5px;
-  text-transform: uppercase;
+  font-size: 24px;
+  color: #fafcfd;
+  padding-top: 5px; /* Ajusta el espacio superior del texto */
+  padding-bottom: 5px; /* Ajusta el espacio inferior del texto */
 }
 
 .custom_nav-container {
@@ -308,10 +306,10 @@ a:focus {
 
 .service_section {
   text-align: center;
-  color: #f9fcfb;
-  background-image: url(../images/service-bg.png);
+  color: #383a90;
+
   background-size: 100% 100%;
-  padding-top: 275px;
+  padding-top: 50px;
   padding-bottom: 125px;
   background-repeat: no-repeat;
   margin-top: -150px;
@@ -718,3 +716,135 @@ a:focus {
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
+
+/* Cambiar el cursor al pasar sobre las imágenes */
+.service_box .img-box {
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Añadir transición suave */
+}
+
+/* Escalar la imagen al pasar el cursor */
+.service_box .img-box:hover img {
+  transform: scale(1.1); /* Agranda la imagen un 10% */
+  transition: transform 0.3s ease; /* Transición suave para la escala */
+}
+
+/* Puedes agregar un pequeño sombreado al pasar sobre la imagen */
+.service_box .img-box:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra suave */
+}
+
+/* Asegurar que los recuadros de las imágenes tengan un tamaño fijo */
+.service_box .img-box {
+  width: 320px;  /* Ancho fijo */
+  height: 250px; /* Altura fija */
+  overflow: hidden; /* Ocultar cualquier parte de la imagen que sobrepase el recuadro */
+}
+
+/* Ajustar la imagen para que ocupe todo el espacio del recuadro */
+.service_box .img-box img {
+  width: 100%;  /* La imagen ocupará el 100% del ancho del contenedor */
+  height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+/* Ajustar el tamaño del logo en el navbar */
+.navbar-brand .logo-img {
+  height: 40px; /* Ajusta la altura del logo */
+  width: auto;
+  margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+
+.navbar-brand span {
+  font-size: 24px;
+  color: #fafcfd;
+  vertical-align: middle; /* Alinea el texto con el logo */
+}
+
+
+/* Estilos para el perfil del servicio */
+.service_profile {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Aumentar el tamaño de la imagen y reducir el margen */
+.profile-img-box {
+  width: 220px;
+  height: 220px;
+  border-radius: 10%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.profile-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajustar la caja de detalles para ocupar el espacio correctamente */
+.profile-detail-box {
+  flex-grow: 1;
+  max-width: 100%; /* Permite que use el 100% del espacio restante */
+  text-align: center; /* Mantiene el texto alineado a la derecha */
+  margin-right: 0; /* Asegúrate de que no haya margen adicional a la derecha */
+  padding-right: 15px; /* Espacio justo entre el texto y el borde derecho */
+}
+
+/* Detalles del servicio */
+.service-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.average-price, .completed-jobs {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Descripción ajustada */
+.service-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Botón de más detalles */
+.view-more-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.view-more-btn:hover {
+  background-color: #45a049;
+}
+
+.nav-link {
+  white-space: nowrap;
+}
+
+.nav-link {
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px; 
+  border-radius: 5px; 
+}               
+.nav-link:hover {
+  background-color: #6a1b9a; 
+  color: #ffffff; 
+}

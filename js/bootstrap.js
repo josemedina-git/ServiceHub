@@ -1,3 +1,23 @@
+document.querySelector('.clickable-gardening').addEventListener('click', function() {
+  window.location.href = 'gardening.html'; // Reemplaza con la URL de destino
+});
+
+document.querySelector('.clickable-plumb').addEventListener('click', function() {
+  window.location.href = 'plumb.html'; // Reemplaza con la URL de destino
+});
+
+document.querySelector('.clickable-cleaning').addEventListener('click', function() {
+  window.location.href = 'cleaning.html'; // Reemplaza con la URL de destino
+});
+
+document.querySelector('.clickable-packing').addEventListener('click', function() {
+  window.location.href = 'packing.html'; // Reemplaza con la URL de destino
+});
+
+document.querySelector('.clickable-renovation').addEventListener('click', function() {
+  window.location.href = 'renovation.html'; // Reemplaza con la URL de destino
+});
+
 /*!
   * Bootstrap v4.3.1 (https://getbootstrap.com/)
   * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
