@@ -1,27 +1,54 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="keywords" content=""/>
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+  
+    <title>ServiceHub</title>
+    <link rel="icon" type="image/png" href="images/icono.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      .search-icon {
+        color: white;
+        cursor: pointer;
+      }
+      /* Estilos para la lista de servicios agendados */
+      .service-list {
+        list-style-type: none;
+        padding: 0;
+      }
 
-  <title>ServiceHub</title>
-  <link rel="icon" type="image/png" href="images/icono.ico">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
-  <link href="css/style.css" rel="stylesheet"/>
-  <link href="css/responsive.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    .search-icon {
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+      .service-list li {
+        background-color: #f8f9fa;
+        padding: 15px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .service-list li span {
+        font-weight: bold;
+      }
+
+      .delete-btn {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
 </head>
 
 <body class="sub_page">
@@ -56,7 +83,7 @@
                     <a class="nav-link" href="agenda.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i>Contactanos</a>
+                    <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i> Contactanos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
@@ -64,7 +91,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="singup.html"><i class="fas fa-user-plus"></i> Registrarse</a>
                   </li>
-                  
                 </ul>
               </div>
             </nav>
@@ -73,111 +99,34 @@
       </div>
     </header>
   </div>
-  <script>
-      function performSearch() {
-          const query = document.getElementById('searchInput').value;
-          if (query) {
-              window.location.href = `index.html?search=${encodeURIComponent(query)}`;
-          }
-      }
-  </script>
-    <!-- end header section -->
-  </div>
-  <!-- service section -->
-   <section class="service_section">
+
+  <!-- Section de servicios agendados -->
+  <section class="agenda_section layout_padding">
     <div class="container">
-      <div class="custom_heading-container">
-        <h2>
-          Nuestros Servicios
-        </h2>
-      </div>
-      <div class="service_container layout_padding2">
-        <div class="service_box clickable-gardening">
-          <div class="img-box">
-            <img src="images/gardening.jpg" alt=""/>
-          </div>
-          <div class="detail-box">
-            <h4>
-              Jardinería <br/>
-              
-            </h4>
-            <p>
-              have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
-              slightly believable. If you are
-            </p>
-          </div>
-        </div>
-        <div class="service_box clickable-plumb">
-          <div class="img-box">
-            <img src="images/plumb.jpg" alt=""/>
-          </div>
-          <div class="detail-box">
-            <h4>
-              Plomería <br/>
-              
-            </h4>
-            <p>
-              have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
-              slightly believable. If you are
-            </p>
-          </div>
-        </div>
-        <div class="service_box clickable-cleaning">
-          <div class="img-box">
-            <img src="images/clean_home.jpg" alt=""/>
-          </div>
-          <div class="detail-box">
-            <h4>
-              Limpieza <br/>
-              de hogar
-            </h4>
-            <p>
-              have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
-              slightly believable. If you are
-            </p>
-          </div>
-        </div>
-        <div class="service_box clickable-packing">
-          <div class="img-box">
-            <img src="images/packing.jpg" alt=""/>
-          </div>
-          <div class="detail-box">
-            <h4>
-              Mudanza <br/>
-              
-            </h4>
-            <p>
-              have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
-              slightly believable. If you are
-            </p>
-          </div>
-        </div>
-        <div class="service_box clickable-renovation">
-          <div class="img-box">
-            <img src="images/renovation.jpg" alt=""/>
-          </div>
-          <div class="detail-box">
-            <h4>
-              Obras y <br/>
-              remodelaciones
-            </h4>
-            <p>
-              have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
-              slightly believable. If you are
-            </p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <a href="">
-          Ver más
-        </a>
-      </div>
+      <h2>Servicios Agendados</h2>
+      <ul class="service-list">
+        <li>
+          <span>Jardinería</span> - 10/10/2024
+          <button class="delete-btn">Eliminar</button>
+        </li>
+        <li>
+          <span>Plomería</span> - 15/10/2024
+          <button class="delete-btn">Eliminar</button>
+        </li>
+        <li>
+          <span>Limpieza</span> - 20/10/2024
+          <button class="delete-btn">Eliminar</button>
+        </li>
+        <li>
+          <span>Remodelaciones</span> - 25/10/2024
+          <button class="delete-btn">Eliminar</button>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- end service section -->
-
+  <br><br><br><br><br>
+  
   <div class="footer_bg">
     <!-- info section -->
     <section class="info_section layout_padding2-bottom">
@@ -346,6 +295,17 @@
     </section>
     <!-- footer section -->
   </div>
+
+  <script>
+      function performSearch() {
+          const query = document.getElementById('searchInput').value;
+          if (query) {
+              window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+          }
+      }
+  </script>
+
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-</body></html>
+</body>
+</html>
