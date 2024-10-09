@@ -1,0 +1,311 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+  
+    <title>ServiceHub</title>
+    <link rel="icon" type="image/png" href="images/icono.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      .search-icon {
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-8 d-flex align-items-center">
+            <img src="images/bannerservicehub.jpeg" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar servicio" aria-label="Search" id="searchInput">
+              <span class="btn my-2 my-sm-0 nav_search-btn search-icon" onclick="performSearch()"><i class="fas fa-search"></i></span>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="favorite.html"><i class="fas fa-heart"></i> Servicios Favoritos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="agenda.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i>Contactanos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="singup.html"><i class="fas fa-user-plus"></i> Registrarse</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <script>
+      function performSearch() {
+          const query = document.getElementById('searchInput').value;
+          if (query) {
+              window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+          }
+      }
+  </script>
+    <!-- end header section -->
+  </div>
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container contact_heading">
+      <h2>
+        Contactanos
+      </h2>
+      <p>
+        psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      </p>
+    </div>
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputName4">Name</label>
+            <input type="text" class="form-control" id="inputName4"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4"/>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputNumber4">Phone number</label>
+            <input type="tel" class="form-control" id="inputNumber4"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputState">Select Service</label>
+            <select id="inputState" class="form-control">
+              <option selected=""></option>
+              <option>Jardineria</option>
+              <option>Plomeria</option>
+              <option>Mudanza</option>
+              <option>Remodelaciones</option>
+              <option>Limpieza</option>
+
+            </select>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="inputMessage">Message</label>
+          <input type="text" class="form-control" id="inputMessage" placeholder=""/>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="">Send</button>
+    </div>
+    </form>
+    
+  </section>
+  <!-- end contact section -->
+  <div class="footer_bg">
+    <!-- info section -->
+    <section class="info_section layout_padding2-bottom">
+      <div class="container">
+        <h3 >
+          ServiceHub
+        </h3>
+      </div>
+      <div class="container info_content">
+
+        <div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex">
+                <h5>
+                  Navegacion
+                </h5>
+              </div>
+              <div class="d-flex ">
+                <ul>
+                  <li>
+                    <a href="index.html">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="favorite.html">
+                      Servicios Favortios
+                    </a>
+                  </li>
+                  <li>
+                    <a href="agenda.html">
+                      Servicios Agendados
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contactanos.html">
+                      Contactanos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="login.html">
+                      Iniciar Sesion
+                    </a>
+                  </li>
+                  <li>
+                    <a href="singup.html">
+                      Registrarse
+                    </a>
+                  </li>
+                  <li>
+                    <a href="updateprofile.html">
+                      Cuenta
+                    </a>
+                  </li>
+                  <li>
+                    <a href="updateprofileprofesional.html">
+                      Cuenta Profesionista
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex">
+                <h5>
+                  Servicios Populares
+                </h5>
+              </div>
+              <div class="d-flex ">
+                <ul>
+                  <li>
+                    <a href="gardening.html">
+                      Jardinería
+                    </a>
+                  </li>
+                  <li>
+                    <a href="plumb.html">
+                      Plomería
+                    </a>
+                  </li>
+                  <li>
+                    <a href="cleaning.html">
+                      Limpieza de Hogar
+                    </a>
+                  </li>
+                  <li>
+                    <a href="packing.html">
+                      Mudanza
+                    </a>
+                  </li>
+                  <li>
+                    <a href="renovation.html">
+                      Obras y remodelaciones
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="d-flex">
+                <h5>
+                  Suscripcion Premium
+                </h5>
+              </div>
+              <div class="d-flex ">
+                <ul>
+                  <li>
+                    <p style="color: white;">Promocionamos tu servicio</p>
+                  </li>
+                  <li>
+                    <p style="color: white;">Disfruta de tu navegacion sin anuncios</p>
+                  </li>
+                  <li>
+                    <p style="color: white;">Obtendras recomendaciones personalizadas</p>
+                  </li>
+                  <li>
+                    <p style="color: white;">Te informaremos de las mejores ofertas de servicios</p>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <p style="color: white;">(Profesionista)</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
+          <div class="social-box">
+            <a href="#">
+              <img src="images/fb.png" alt=""/>
+            </a>
+
+            <a href="#">
+              <img src="images/twitter.png" alt=""/>
+            </a>
+            <a href="#">
+              <img src="images/linkedin1.png" alt=""/>
+            </a>
+            <a href="#">
+              <img src="images/instagram1.png" alt=""/>
+            </a>
+          </div>
+          <div class="form_container mt-5">
+            <form action="payment.html">
+              <button type="submit">
+                Suscripcion Premium
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- end info_section -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+      <p>
+        © 2019 All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </section>
+    <!-- footer section -->
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+</body></html>
