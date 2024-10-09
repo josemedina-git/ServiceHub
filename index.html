@@ -21,55 +21,124 @@
       color: white;
       cursor: pointer;
     }
-    /* Estilos para el panel de filtros */
-    .filter-panel {
+    .filter-panel, .filter-panel-2 {
       background-color: #ffffff;
       padding: 15px;
-      margin-top: 60px;
-      position: absolute; /* Cambiar a absolute */
-      left: 20px; /* Posición del filtro */
-      top: 100px; /* Posición desde la parte superior */
+      position: absolute;
+      left: 20px;
+      top: 120px;
       width: 250px;
       height: auto;
       overflow-y: auto;
-      z-index: 1000; /* Asegura que el panel de filtros esté por encima de otros elementos */
+      z-index: 1000;
     }
 
     .filter-panel-2 {
-      background-color: #ffffff;
-      padding: 15px;
-      margin-top: 290px;
-      position: absolute; /* Cambiar a absolute */
-      left: 20px; /* Posición del filtro */
-      top: 100px; /* Posición desde la parte superior */
-      width: 250px;
-      height: auto;
-      overflow-y: auto;
-      z-index: 1000; /* Asegura que el panel de filtros esté por encima de otros elementos */
+      margin-top: 240px;
     }
 
-    /* Ajustes de tamaño y márgenes */
-    .container-fluid {
-      padding-top: 20px; /* Espacio desde la parte superior */
+    /* Ajuste para pantallas grandes */
+    @media (min-width: 768px) {
+      .filter-panel, .filter-panel-2 {
+        position: absolute;
+        width: 250px;
+        left: 20px;
+      }
+    }
+
+    /* Media queries para pantallas pequeñas (móviles) */
+    @media (max-width: 767px) {
+      .filter-panel, .filter-panel-2 {
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: auto;
+        margin-bottom: 20px;
+      }
+
+      .filter-panel {
+        margin-top: 20px;
+      }
+
+      .filter-panel-2 {
+        margin-top: 10px;
+      }
     }
 
     .filter-heading {
-      font-size: 14px; /* Tamaño de fuente más pequeño */
+      font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
     .filter-checkbox {
       margin-bottom: 10px;
-      font-size: 12px; /* Tamaño de fuente más pequeño */
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-8 d-flex align-items-center">
+            <img src="images/bannerservicehub.jpeg" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar servicio" aria-label="Search" id="searchInput">
+              <span class="btn my-2 my-sm-0 nav_search-btn search-icon" onclick="performSearch()"><i class="fas fa-search"></i></span>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="favorite.html"><i class="fas fa-heart"></i> Servicios Favoritos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="agenda.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i>Contactanos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="singup.html"><i class="fas fa-user-plus"></i> Registrarse</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <script>
+      function performSearch() {
+          const query = document.getElementById('searchInput').value;
+          if (query) {
+              window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+          }
+      }
+  </script>
+    <!-- end header section -->
   <!-- Filtros - Checklists en el lado izquierdo -->
   <div class="filter-panel">
-    <h5 class="filter-heading">Filtrar por:</h5>
+    <h5 class="filter-heading">Filtrar por Servicio:</h5>
 
     <div class="filter-checkbox">
       <input type="checkbox" id="filter1">
@@ -101,86 +170,25 @@
     <h5 class="filter-heading">Filtrar por precio:</h5>
 
     <div class="filter-checkbox">
-      <input type="checkbox" id="filter1">
-      <label for="filter1">$50 - $100</label>
+      <input type="checkbox" id="price1">
+      <label for="price1">$50 - $100</label>
     </div>
 
     <div class="filter-checkbox">
-      <input type="checkbox" id="filter2">
-      <label for="filter2">$101 - $200</label>
+      <input type="checkbox" id="price2">
+      <label for="price2">$101 - $200</label>
     </div>
 
     <div class="filter-checkbox">
-      <input type="checkbox" id="filter3">
-      <label for="filter3">$201 - $500</label>
+      <input type="checkbox" id="price3">
+      <label for="price3">$201 - $500</label>
     </div>
 
     <div class="filter-checkbox">
-      <input type="checkbox" id="filter4">
-      <label for="filter4">+$500</label>
+      <input type="checkbox" id="price4">
+      <label for="price4">+$500</label>
     </div>
   </div>
-
-  <div class="hero_area">
-    <header class="header_section">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-lg-8 d-flex align-items-center">
-            <img src="images/bannerservicehub.jpeg" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Buscar servicio" aria-label="Search" id="searchInput">
-              <span class="btn my-2 my-sm-0 nav_search-btn search-icon" onclick="performSearch()"><i class="fas fa-search"></i></span>
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8">
-            <nav class="navbar navbar-expand-lg custom_nav-container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="service.html"><i class="fas fa-cogs"></i> Servicios</a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a class="nav-link" href="wishlist.html"><i class="fas fa-heart"></i> Servicios Favoritos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="orders.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="signin.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="signup.html"><i class="fas fa-user-plus"></i> Registrarse</a>
-                  </li>
-                  
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
-  <script>
-      function performSearch() {
-          const query = document.getElementById('searchInput').value;
-          if (query) {
-              window.location.href = `results.html?search=${encodeURIComponent(query)}`;
-          }
-      }
-  </script>
-    <!-- end header section -->
-  </div>
-
 <!-- welcome section -->   
 <section class="welcome_section layout_padding"> 
   <div class="container">
@@ -540,37 +548,37 @@
                     </a>
                   </li>
                   <li>
-                    <a href="service.html">
-                      Servicios
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a href="favorite.html">
                       Servicios Favortios
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="agenda.html">
                       Servicios Agendados
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="contactanos.html">
+                      Contactanos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="login.html">
                       Iniciar Sesion
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="singup.html">
                       Registrarse
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="updateprofile.html">
                       Cuenta
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="updateprofileprofesional.html">
                       Cuenta Profesionista
                     </a>
                   </li>
