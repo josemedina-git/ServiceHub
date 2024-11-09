@@ -29150,4 +29150,111 @@ pre[class*=language-] {
   }
 }
 
-/*# sourceMappingURL=dashboard-free.css.map */
+ 
+.nav-item > .nav-link:hover {
+  background-color: transparent;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.submenu a {
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.submenu a:hover {
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 5px;
+}
+
+
+.submenu i {
+  margin-right: 10px;
+}
+
+.dropdown-arrow {
+  font-size: 18px;
+  vertical-align: middle;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.nav-link.collapsed .dropdown-arrow {
+  transform: rotate(0deg);
+}
+
+.nav-link.expanded .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+#logTable_wrapper .dataTables_filter label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+#logTable thead {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+#logTable thead th {
+  font-weight: 600;
+  text-align: center;
+}
+
+#logTable tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+#logTable tbody tr:hover {
+  background-color: #cdacff;
+}
+
+#logTable tbody td {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 8px;
+  color: #333;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #6a1b9a;
+  color: white !important;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin: 2px;
+  transition: background-color 0.3s;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #6a1b9a;
+  color: #fff !important;
+}
+
+.dataTables_wrapper .dataTables_info {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.dataTables_wrapper .dataTables_length label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.pagination .page-item .page-link {
+  background-color: purple; 
+  color: white; 
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #BB6FFF;
+}
+
+
