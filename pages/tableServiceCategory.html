@@ -311,7 +311,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por Id"
+                                            placeholder="Buscar por Servicio"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -343,19 +343,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Id de servicio
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#"
-                                                    style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Fecha
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#"
-                                                    style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Status
+                                                    Buscar por Categoría
                                                 </a>
                                             </li>
                                         </ul>
@@ -377,19 +365,19 @@
                                         Id Servicio<span class="material-symbols-rounded arrow"
                                             id="arrow-idService">expand_more</span>
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(3)">
-                                        Nombre Servicio <span class="material-symbols-rounded arrow"
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 "
+                                        onclick="sortTable(1)">
+                                        Servicio <span class="material-symbols-rounded arrow"
                                             id="arrow-nameService">expand_more</span>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                                        onclick="sortTable(0)">
+                                        onclick="sortTable(3)">
                                         Id Categoria<span class="material-symbols-rounded arrow"
                                             id="arrow-idCategory">expand_more</span>
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
                                         onclick="sortTable(3)">
-                                        Nombre Categoria <span class="material-symbols-rounded arrow"
+                                        Categoría <span class="material-symbols-rounded arrow"
                                             id="arrow-nameCategory">expand_more</span>
                                     </th>
                                     <th
@@ -405,12 +393,10 @@
 
                         <script>
 
-
-
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.idService.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.nameService.toLowerCase().includes(searchTerm.toLowerCase());
                                 });
                             }
 

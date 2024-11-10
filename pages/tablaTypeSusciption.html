@@ -311,7 +311,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por Id"
+                                            placeholder="Buscar Suscripción"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -343,19 +343,13 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Id de servicio
+                                                    Buscar por Id
                                                 </a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Fecha
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#"
-                                                    style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Status
+                                                    Buscar por Precio
                                                 </a>
                                             </li>
                                         </ul>
@@ -409,7 +403,8 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.name.toLowerCase().includes(searchTerm.toLowerCase())
+
                                 });
                             }
 

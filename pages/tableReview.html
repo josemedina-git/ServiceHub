@@ -311,7 +311,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por Id"
+                                            placeholder="Buscar por Agenda"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -372,7 +372,7 @@
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                                         onclick="sortTable(1)">
-                                        Id Agenda <span class="material-symbols-rounded arrow"
+                                        Agenda <span class="material-symbols-rounded arrow"
                                             id="arrow-idagenda">expand_more</span>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
@@ -408,7 +408,7 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.idagenda.toString().includes(searchTerm.toLowerCase());
                                 });
                             }
 

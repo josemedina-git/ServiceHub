@@ -341,7 +341,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Id de servicio
+                                                    Buscar por CURP
                                                 </a>
                                             </li>
                                             <li>
@@ -353,7 +353,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Número de telefono
+                                                    Buscar por RFC
                                                 </a>
                                             </li>
                                         </ul>
@@ -416,11 +416,10 @@
                         <script>
 
 
-
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                   return usuario.profesional.toLowerCase().includes(searchTerm.toLowerCase())
                                 });
                             }
 

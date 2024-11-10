@@ -311,7 +311,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por Id"
+                                            placeholder="Buscar Profesional"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -343,19 +343,25 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Id de servicio
+                                                    Buscar por Suscripción
                                                 </a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Fecha
+                                                    Buscar por Fecha de inicio
                                                 </a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Status
+                                                    Buscar por Fecha de expiración
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"
+                                                    style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
+                                                    Buscar Status
                                                 </a>
                                             </li>
                                         </ul>
@@ -398,7 +404,7 @@
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
                                         onclick="sortTable(5)">
-                                        Estado <span class="material-symbols-rounded arrow"
+                                        Status <span class="material-symbols-rounded arrow"
                                             id="arrow-estado">expand_more</span>
                                     </th>
                                     <th
@@ -419,7 +425,8 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.profesional.toLowerCase().includes(searchTerm.toLowerCase())
+
                                 });
                             }
 
@@ -474,7 +481,7 @@
 
 
                             const usuarios = [
-                                { id: 1, profesional: 'Carlos Martínez', dateStart: '2024-01-01', dateEnd: '2024-12-31', suscripcion: 'anual', estado: 'activa' },
+                                { id: 1, profesional: 'Jonh Cena', dateStart: '2024-01-01', dateEnd: '2024-12-31', suscripcion: 'anual', estado: 'activa' },
                                 { id: 2, profesional: 'Ana Gómez', dateStart: '2024-03-15', dateEnd: '2024-06-15', suscripcion: 'mensual', estado: 'activa' },
                                 { id: 3, profesional: 'Juan Pérez', dateStart: '2024-02-01', dateEnd: '2024-02-28', suscripcion: 'gratis', estado: 'expirada' },
                                 { id: 4, profesional: 'Laura Sánchez', dateStart: '2024-05-01', dateEnd: '2025-04-30', suscripcion: 'anual', estado: 'activa' },

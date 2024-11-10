@@ -415,7 +415,8 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.nombre.toLowerCase().includes(searchTerm.toLowerCase());
+
                                 });
                             }
 

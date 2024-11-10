@@ -309,7 +309,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por nombre"
+                                            placeholder="Buscar Profesional"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -341,7 +341,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Id de servicio
+                                                    Buscar por Servicio
                                                 </a>
                                             </li>
                                             <li>
@@ -379,15 +379,15 @@
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                                             onclick="sortTable(1)">
                                             Profesional <span class="material-symbols-rounded arrow"
-                                                id="arrow-name">expand_more</span>
+                                                id="arrow-nombre">expand_more</span>
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                                            onclick="sortTable(3)">
+                                            onclick="sortTable(2)">
                                             Servicio <span class="material-symbols-rounded arrow"
                                                 id="arrow-service">expand_more</span>
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                            onclick="sortTable(5)">
+                                            onclick="sortTable(3)">
                                             Número de telefono <span class="material-symbols-rounded arrow"
                                                 id="arrow-phone">expand_more</span>
                                         </th>
@@ -397,7 +397,7 @@
                                                 id="arrow-email">expand_more</span>
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                            onclick="sortTable(6)">
+                                            onclick="sortTable(5)">
                                             Precio por Hora<span class="material-symbols-rounded arrow"
                                                 id="arrow-price">expand_more</span>
                                         </th>
@@ -420,7 +420,7 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.idProfesional.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.nombre.toLowerCase().includes(searchTerm.toLowerCase());
                                 });
                             }
 

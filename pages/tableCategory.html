@@ -284,7 +284,6 @@
 
 
 
-
                     <div class="card my-4 shadow-lg border-0">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
@@ -311,7 +310,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por Id"
+                                            placeholder="Buscar por Categoria"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -343,19 +342,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Id de servicio
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#"
-                                                    style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Fecha
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#"
-                                                    style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Status
+                                                    Buscar por Id
                                                 </a>
                                             </li>
                                         </ul>
@@ -404,7 +391,7 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.name.toLowerCase().includes(searchTerm.toLowerCase());
                                 });
                             }
 

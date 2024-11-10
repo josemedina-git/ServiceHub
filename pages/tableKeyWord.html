@@ -311,7 +311,7 @@
                                         <h6 class="me-2 text-muted">Buscar:</h6>
                                         <input id="searchInput" type="text"
                                             class="form-control form-control-sm shadow-sm ms-3"
-                                            placeholder="Buscar por Id"
+                                            placeholder="Buscar KeyWord"
                                             style="border-radius: 8px; border: 2px solid #007bff;">
                                     </div>
                                 </div>
@@ -343,7 +343,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="#"
                                                     style="border-radius: 8px; padding: 10px 15px; font-size: 14px; transition: background-color 0.3s ease;">
-                                                    Buscar por Palabra
+                                                    Buscar por ID
                                                 </a>
                                             </li>
                                         </ul>
@@ -392,7 +392,7 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.id.toString().includes(searchTerm.toLowerCase());
+                                    return usuario.keyWord.toLowerCase().includes(searchTerm.toLowerCase());
                                 });
                             }
 
@@ -447,21 +447,21 @@
 
 
                             const usuarios = [
-                                { id: 1, keyWord: 'Corte de Césped', categoria: 'Jardinería' },
-                                { id: 2, keyWord: 'Reparación de Tuberías', categoria: 'Plomería' },
-                                { id: 3, keyWord: 'Instalación Eléctrica', categoria: 'Electricidad' },
-                                { id: 4, keyWord: 'Fabricación de Muebles', categoria: 'Carpintería' },
-                                { id: 5, keyWord: 'Pintura de Interiores', categoria: 'Pintura' },
-                                { id: 6, keyWord: 'Limpieza Residencial', categoria: 'Limpieza' },
-                                { id: 7, keyWord: 'Cambio de Cerraduras', categoria: 'Cerrajería' },
-                                { id: 8, keyWord: 'Instalación de Calentadores', categoria: 'Plomería' },
-                                { id: 9, keyWord: 'Construcción de Muros', categoria: 'Albañilería' },
-                                { id: 10, keyWord: 'Mudanza Local', categoria: 'Mudanzas' },
-                                { id: 11, keyWord: 'Reparación de Autos', categoria: 'Mecánica' },
-                                { id: 12, keyWord: 'Instalación de Redes', categoria: 'Tecnología' },
-                                { id: 13, keyWord: 'Instalación de A/C', categoria: 'Climatización' },
-                                { id: 14, keyWord: 'Reparación de Refrigeradores', categoria: 'Electrodomésticos' },
-                                { id: 15, keyWord: 'Control de Plagas', categoria: 'Fumigación' }
+                                { id: 1, keyWord: 'Corte', categoria: 'Jardinería' },
+                                { id: 2, keyWord: 'Reparación', categoria: 'Plomería' },
+                                { id: 3, keyWord: 'Instalación', categoria: 'Electricidad' },
+                                { id: 4, keyWord: 'Fabricación', categoria: 'Carpintería' },
+                                { id: 5, keyWord: 'Pintura', categoria: 'Pintura' },
+                                { id: 6, keyWord: 'Limpieza', categoria: 'Limpieza' },
+                                { id: 7, keyWord: 'Cambio', categoria: 'Cerrajería' },
+                                { id: 8, keyWord: 'Instalación', categoria: 'Plomería' },
+                                { id: 9, keyWord: 'Construcción', categoria: 'Albañilería' },
+                                { id: 10, keyWord: 'Mudanza', categoria: 'Mudanzas' },
+                                { id: 11, keyWord: 'Reparación', categoria: 'Mecánica' },
+                                { id: 12, keyWord: 'Instalación', categoria: 'Tecnología' },
+                                { id: 13, keyWord: 'Instalación', categoria: 'Climatización' },
+                                { id: 14, keyWord: 'Reparación', categoria: 'Electrodomésticos' },
+                                { id: 15, keyWord: 'Control', categoria: 'Fumigación' }
                             ];
 
 

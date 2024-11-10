@@ -383,43 +383,33 @@
                                         onclick="sortTable(0)">
                                         Id <span class="material-symbols-rounded arrow" id="arrow-id">expand_more</span>
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                                        onclick="sortTable(1)">
-                                        Id Cliente <span class="material-symbols-rounded arrow"
-                                            id="arrow-idcustomer">expand_more</span>
-                                    </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+                                        onclick="sortTable(1)">
+                                        Cliente <span class="material-symbols-rounded arrow"
+                                            id="arrow-nombreCliente">expand_more</span>
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
                                         onclick="sortTable(2)">
-                                        Nombre <span class="material-symbols-rounded arrow"
-                                            id="arrow-nombre">expand_more</span>
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(3)">
-                                        Apellidos <span class="material-symbols-rounded arrow"
-                                            id="arrow-apellidos">expand_more</span>
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(4)">
                                         Dirección <span class="material-symbols-rounded arrow"
                                             id="arrow-direccion">expand_more</span>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(5)">
+                                        onclick="sortTable(3)">
                                         Ciudad <span class="material-symbols-rounded arrow"
                                             id="arrow-ciudad">expand_more</span>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(6)">
+                                        onclick="sortTable(4)">
                                         Estado <span class="material-symbols-rounded arrow"
                                             id="arrow-estado">expand_more</span>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(7)">
+                                        onclick="sortTable(5)">
                                         Código Postal <span class="material-symbols-rounded arrow"
                                             id="arrow-cp">expand_more</span>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center"
-                                        onclick="sortTable(8)">
+                                        onclick="sortTable(6)">
                                         País <span class="material-symbols-rounded arrow"
                                             id="arrow-pais">expand_more</span>
                                     </th>
@@ -438,9 +428,7 @@
                             //busqueda
                             function filterUsers(searchTerm) {
                                 return usuarios.filter(usuario => {
-                                    return usuario.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                        usuario.direccion.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                        usuario.ciudad.toLowerCase().includes(searchTerm.toLowerCase());
+                                    return usuario.nombreCliente.toLowerCase().includes(searchTerm.toLowerCase());
                                 });
                             }
 
@@ -454,7 +442,7 @@
 
                             function sortTable(columnIndex) {
                                 let direction = 1;
-                                const arrow = document.querySelector(`#arrow-${['id', 'idcustomer', 'nombre', 'apellidos', 'direccion', 'ciudad', 'estado', 'cp', 'pais'][columnIndex]}`);
+                                const arrow = document.querySelector(`#arrow-${['id', 'nombreCliente', 'direccion', 'ciudad', 'estado', 'cp', 'pais'][columnIndex]}`);
 
                                 // Alternar dirección de la flecha
                                 if (arrow.innerHTML === 'expand_more') {
@@ -496,22 +484,23 @@
 
 
                             const usuarios = [
-                                { id: 1, idcustomer: 101, nombre: 'Juan', apellidos: 'Pérez', direccion: 'Calle 123', ciudad: 'Ciudad de México', estado: 'CDMX', cp: '01000', pais: 'México' },
-                                { id: 2, idcustomer: 102, nombre: 'María', apellidos: 'González', direccion: 'Avenida Reforma', ciudad: 'Monterrey', estado: 'Nuevo León', cp: '64000', pais: 'México' },
-                                { id: 3, idcustomer: 103, nombre: 'Carlos', apellidos: 'López', direccion: 'Boulevard Principal', ciudad: 'Guadalajara', estado: 'Jalisco', cp: '44100', pais: 'México' },
-                                { id: 4, idcustomer: 104, nombre: 'Ana', apellidos: 'Martínez', direccion: 'Calle del Sol', ciudad: 'Puebla', estado: 'Puebla', cp: '72000', pais: 'México' },
-                                { id: 5, idcustomer: 105, nombre: 'Luis', apellidos: 'Ramírez', direccion: 'Calle Luna', ciudad: 'Tijuana', estado: 'Baja California', cp: '22000', pais: 'México' },
-                                { id: 6, idcustomer: 106, nombre: 'Gabriela', apellidos: 'Hernández', direccion: 'Avenida Central', ciudad: 'León', estado: 'Guanajuato', cp: '37000', pais: 'México' },
-                                { id: 7, idcustomer: 107, nombre: 'José', apellidos: 'Sánchez', direccion: 'Calle Independencia', ciudad: 'Querétaro', estado: 'Querétaro', cp: '76000', pais: 'México' },
-                                { id: 8, idcustomer: 108, nombre: 'Paula', apellidos: 'Rojas', direccion: 'Avenida Juárez', ciudad: 'Toluca', estado: 'Estado de México', cp: '50000', pais: 'México' },
-                                { id: 9, idcustomer: 109, nombre: 'Ricardo', apellidos: 'Morales', direccion: 'Calle Hidalgo', ciudad: 'Mérida', estado: 'Yucatán', cp: '97000', pais: 'México' },
-                                { id: 10, idcustomer: 110, nombre: 'Laura', apellidos: 'Cruz', direccion: 'Boulevard Norte', ciudad: 'Morelia', estado: 'Michoacán', cp: '58000', pais: 'México' },
-                                { id: 11, idcustomer: 111, nombre: 'Alejandro', apellidos: 'Vega', direccion: 'Calle Reforma', ciudad: 'San Luis Potosí', estado: 'San Luis Potosí', cp: '78000', pais: 'México' },
-                                { id: 12, idcustomer: 112, nombre: 'Diana', apellidos: 'Ortiz', direccion: 'Avenida Universidad', ciudad: 'Aguascalientes', estado: 'Aguascalientes', cp: '31000', pais: 'México' },
-                                { id: 13, idcustomer: 113, nombre: 'Fernando', apellidos: 'Navarro', direccion: 'Calle Colón', ciudad: 'Hermosillo', estado: 'Sonora', cp: '83000', pais: 'México' },
-                                { id: 14, idcustomer: 114, nombre: 'Sofía', apellidos: 'Mendoza', direccion: 'Calle Victoria', ciudad: 'Culiacán', estado: 'Sinaloa', cp: '80000', pais: 'México' },
-                                { id: 15, idcustomer: 115, nombre: 'Raúl', apellidos: 'Castillo', direccion: 'Avenida Patria', ciudad: 'Aguascalientes', estado: 'Aguascalientes', cp: '20000', pais: 'México' }
+                                { id: 1, nombreCliente: 'Juan Pérez', direccion: 'Calle Ficticia 123', ciudad: 'Ciudad de México', estado: 'CDMX', cp: '01000', pais: 'México' },
+                                { id: 2, nombreCliente: 'Ana Gómez', direccion: 'Av. Reforma 456', ciudad: 'Monterrey', estado: 'Nuevo León', cp: '64000', pais: 'México' },
+                                { id: 3, nombreCliente: 'Carlos López', direccion: 'Calle Sol 789', ciudad: 'Guadalajara', estado: 'Jalisco', cp: '44100', pais: 'México' },
+                                { id: 4, nombreCliente: 'Luisa Rodríguez', direccion: 'Calle Luna 101', ciudad: 'Cancún', estado: 'Quintana Roo', cp: '77500', pais: 'México' },
+                                { id: 5, nombreCliente: 'Pedro Martínez', direccion: 'Calle del Mar 202', ciudad: 'Acapulco', estado: 'Guerrero', cp: '39300', pais: 'México' },
+                                { id: 6, nombreCliente: 'Marta Hernández', direccion: 'Boulevard Insurgentes 303', ciudad: 'Tijuana', estado: 'Baja California', cp: '22000', pais: 'México' },
+                                { id: 7, nombreCliente: 'José Sánchez', direccion: 'Avenida Hidalgo 404', ciudad: 'Puebla', estado: 'Puebla', cp: '72000', pais: 'México' },
+                                { id: 8, nombreCliente: 'Laura Díaz', direccion: 'Calle de los Olivos 505', ciudad: 'Querétaro', estado: 'Querétaro', cp: '76000', pais: 'México' },
+                                { id: 9, nombreCliente: 'Jorge Martínez', direccion: 'Avenida de los Ángeles 606', ciudad: 'Toluca', estado: 'Estado de México', cp: '50000', pais: 'México' },
+                                { id: 10, nombreCliente: 'Patricia González', direccion: 'Calle Juárez 707', ciudad: 'Morelia', estado: 'Michoacán', cp: '58000', pais: 'México' },
+                                { id: 11, nombreCliente: 'Ricardo García', direccion: 'Calle de la Paz 808', ciudad: 'Culiacán', estado: 'Sinaloa', cp: '80000', pais: 'México' },
+                                { id: 12, nombreCliente: 'Verónica Torres', direccion: 'Calle San Juan 909', ciudad: 'Mazatlán', estado: 'Sinaloa', cp: '82000', pais: 'México' },
+                                { id: 13, nombreCliente: 'Héctor Ramírez', direccion: 'Avenida de las Palmas 1010', ciudad: 'Saltillo', estado: 'Coahuila', cp: '25000', pais: 'México' },
+                                { id: 14, nombreCliente: 'Isabel Fernández', direccion: 'Calle del Sol 1111', ciudad: 'Chihuahua', estado: 'Chihuahua', cp: '31000', pais: 'México' },
+                                { id: 15, nombreCliente: 'Eduardo Álvarez', direccion: 'Avenida López Mateos 1212', ciudad: 'León', estado: 'Guanajuato', cp: '37000', pais: 'México' }
                             ];
+
 
 
                             //PAginacion de abajito
@@ -539,9 +528,7 @@
                                     const row = `
             <tr>
                 <td class="text-xs font-weight-bold mb-0">${usuario.id}</td>
-                <td class="text-xs font-weight-bold mb-0">${usuario.idcustomer}</td>
-                <td class="text-center text-xs font-weight-bold mb-0">${usuario.nombre}</td>
-                <td class="text-center text-xs font-weight-bold mb-0">${usuario.apellidos}</td>
+                <td class="text-center text-xs font-weight-bold mb-0">${usuario.nombreCliente}</td>
                 <td class="text-center text-xs font-weight-bold mb-0">${usuario.direccion}</td>
                 <td class="text-center text-xs font-weight-bold mb-0">${usuario.ciudad}</td>
                 <td class="text-center text-xs font-weight-bold mb-0">${usuario.estado}</td>
