@@ -407,12 +407,12 @@
                     <div class="card my-4 shadow-lg border-0">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Agregar Ubicación</h6>
+                                <h6 class="text-white text-capitalize ps-3">Agendar Servicio</h6>
                             </div>
                         </div>
 
                         <div class="card-body px-4 pb-4">
-                            
+
                         </div>
                     </div>
 
@@ -422,10 +422,10 @@
                                 <!-- Card conteniendo el formulario -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Formulario de Direcciones</h5>
+                                        <h5 class="card-title text-center mb-4">Formulario de Agendas</h5>
                                         <form id="formulario" onsubmit="mostrarConfirmacion(event)">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
+                                            <div class="form-row me-2">
+                                                <div class="form-group col-md-4 me-2">
                                                     <label for="cliente" class="text-black fw-bold">
                                                         Cliente</label>
                                                     <select id="cliente" class="lista">
@@ -436,68 +436,84 @@
                                                         <option>Gustavo Rangel</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-8">
-                                                    <label for="direccion" class="text-black fw-bold">Dirección</label>
-                                                    <input type="text" class="form-control custom-input" id="direccion"
-                                                        placeholder="Calle y número">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="ciudad" class="text-black fw-bold">Ciudad</label>
+                                                <br>
+                                                <div class="form-group col-md-4 me-2">
+                                                    <label for="ciudad" class="text-black fw-bold">Servicio</label>
                                                     <select id="ciudad" class="lista">
-                                                        <option>Seleccionar</option>
-                                                        <option>Aguascalientes</option>
-                                                        <option>Acapulco</option>
-                                                        <option>Ciudad de México</option>
-                                                        <option>Guadalajara</option>
-                                                        <option>Monterrey</option>
-                                                        <option>Puebla</option>
-                                                        <option>Tijuana</option>
-                                                        <option>León</option>
-                                                        <option>Cancún</option>
-                                                        <option>Merida</option>
-                                                        <option>Chihuahua</option>
-                                                        <option>Morelia</option>
-                                                        <option>Querétaro</option>
-                                                        <option>Hermosillo</option>
-                                                        <option>Saltillo</option>
-                                                        <option>San Luis Potosí</option>
-                                                        <option>Mexicali</option>
-                                                        <option>Veracruz</option>
-                                                        <option>Durango</option>
-                                                        <option>Tuxtla Gutiérrez</option>
-                                                        <option>Tepic</option>
-                                                        <option>Oaxaca</option>
-                                                        <option>Colima</option>
-                                                        <option>Ensenada</option>
-                                                        <option>Fresnillo</option>
-                                                        <option>Los Mochis</option>
-                                                        <option>Celaya</option>
-                                                        <option>Villahermosa</option>
-                                                        <option>Culiacán</option>
-                                                        <option>La Paz</option>
-                                                        <option>Matamoros</option>
-                                                        <option>Irapuato</option>
+                                                        <option selected>Seleccionar</option>
+                                                        <option>Reparación de fugas</option>
+                                                        <option>Instalación de grifos y lavabos</option>
+                                                        <option>Mantenimiento de sistemas de drenaje</option>
+                                                        <option>Desatasco de tuberías</option>
+
+                                                        <!-- Electricidad -->
+                                                        <option>Instalación de interruptores y enchufes</option>
+                                                        <option>Reparación de cortocircuitos</option>
+                                                        <option>Instalación de lámparas y bombillas</option>
+                                                        <option>Reemplazo de cableado eléctrico</option>
+
+                                                        <!-- Carpintería -->
+                                                        <option>Fabricación de muebles a medida</option>
+                                                        <option>Instalación de puertas y ventanas</option>
+                                                        <option>Reparación de muebles de madera</option>
+                                                        <option>Restauración de muebles antiguos</option>
+
+                                                        <!-- Jardinería -->
+                                                        <option>Diseño y mantenimiento de jardines</option>
+                                                        <option>Siembra de plantas y árboles</option>
+                                                        <option>Recorte y poda de arbustos</option>
+                                                        <option>Instalación de sistemas de riego</option>
+
+                                                        <!-- Limpieza -->
+                                                        <option>Limpieza general de casas</option>
+                                                        <option>Limpiar alfombras y tapicería</option>
+                                                        <option>Lavado de ventanas</option>
+                                                        <option>Limpieza de oficinas</option>
+
+                                                        <!-- Pintura -->
+                                                        <option>Pintura de interiores</option>
+                                                        <option>Pintura de exteriores</option>
+                                                        <option>Pintura de muebles</option>
+                                                        <option>Pintura de fachadas</option>
+
+                                                        <!-- Cerrajería -->
+                                                        <option>Apertura de cerraduras</option>
+                                                        <option>Instalación de cerraduras nuevas</option>
+                                                        <option>Reparación de cerraduras dañadas</option>
+                                                        <option>Cambio de llaves</option>
+
+                                                        <!-- Reparación de electrodomésticos -->
+                                                        <option>Reparación de refrigeradores</option>
+                                                        <option>Reparación de lavadoras</option>
+                                                        <option>Reparación de microondas</option>
+                                                        <option>Reparación de estufas</option>
+
+                                                        <!-- Servicio de mudanza -->
+                                                        <option>Embalaje y transporte de muebles</option>
+                                                        <option>Desmontaje y montaje de muebles</option>
+                                                        <option>Traslado de electrodomésticos</option>
+                                                        <option>Mudanza de oficina</option>
+
+                                                        <!-- Albañilería -->
+                                                        <option>Construcción de paredes</option>
+                                                        <option>Reparación de paredes y techos</option>
+                                                        <option>Instalación de pisos</option>
+                                                        <option>Colocación de azulejos y cerámica</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="estado" class="text-black fw-bold">Estado</label>
-                                                    <input type="text" class="form-control custom-input" id="estado"
-                                                        placeholder="Estado">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="pais" class="text-black fw-bold">País</label>
-                                                    <input type="text" class="form-control custom-input" id="pais"
-                                                        placeholder="País">
-                                                </div>
+
                                             </div>
                                             <div class="form-row">
+
                                                 <div class="form-group col-md-4">
-                                                    <label for="codigoPostal" class="text-black fw-bold">Código
-                                                        Postal</label>
-                                                    <input type="text" class="form-control custom-input"
-                                                        id="codigoPostal" placeholder="Código Postal">
+                                                    <label for="fecha" class="text-black fw-bold">Fecha</label>
+                                                    <input type="date" class="form-control custom-input" id="fecha"
+                                                        placeholder="Seleccionar fecha">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="Status" class="text-black fw-bold">Status</label>
+                                                    <input type="text" class="form-control custom-input" id="pais"
+                                                        placeholder="Status">
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-info">Enviar</button>

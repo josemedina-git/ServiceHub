@@ -407,12 +407,10 @@
                     <div class="card my-4 shadow-lg border-0">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Agregar Ubicación</h6>
+                                <h6 class="text-white text-capitalize ps-3">Agregar Reseña</h6>
                             </div>
                         </div>
-
                         <div class="card-body px-4 pb-4">
-                            
                         </div>
                     </div>
 
@@ -422,83 +420,43 @@
                                 <!-- Card conteniendo el formulario -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Formulario de Direcciones</h5>
+                                        <h5 class="card-title text-center mb-4">Formulario de Reseñas</h5>
                                         <form id="formulario" onsubmit="mostrarConfirmacion(event)">
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="cliente" class="text-black fw-bold">
-                                                        Cliente</label>
-                                                    <select id="cliente" class="lista">
-                                                        <option selected>Seleccionar</option>
-                                                        <option>Juan Marcelo</option>
-                                                        <option>Pedro Sanchez Martinez</option>
-                                                        <option>Marta Martin</option>
-                                                        <option>Gustavo Rangel</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-8">
-                                                    <label for="direccion" class="text-black fw-bold">Dirección</label>
-                                                    <input type="text" class="form-control custom-input" id="direccion"
-                                                        placeholder="Calle y número">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="ciudad" class="text-black fw-bold">Ciudad</label>
+                                                <div class="form-group col-md-4 me-2">
+                                                    <label for="ciudad" class="text-black fw-bold">Agenda</label>
                                                     <select id="ciudad" class="lista">
                                                         <option>Seleccionar</option>
-                                                        <option>Aguascalientes</option>
-                                                        <option>Acapulco</option>
-                                                        <option>Ciudad de México</option>
-                                                        <option>Guadalajara</option>
-                                                        <option>Monterrey</option>
-                                                        <option>Puebla</option>
-                                                        <option>Tijuana</option>
-                                                        <option>León</option>
-                                                        <option>Cancún</option>
-                                                        <option>Merida</option>
-                                                        <option>Chihuahua</option>
-                                                        <option>Morelia</option>
-                                                        <option>Querétaro</option>
-                                                        <option>Hermosillo</option>
-                                                        <option>Saltillo</option>
-                                                        <option>San Luis Potosí</option>
-                                                        <option>Mexicali</option>
-                                                        <option>Veracruz</option>
-                                                        <option>Durango</option>
-                                                        <option>Tuxtla Gutiérrez</option>
-                                                        <option>Tepic</option>
-                                                        <option>Oaxaca</option>
-                                                        <option>Colima</option>
-                                                        <option>Ensenada</option>
-                                                        <option>Fresnillo</option>
-                                                        <option>Los Mochis</option>
-                                                        <option>Celaya</option>
-                                                        <option>Villahermosa</option>
-                                                        <option>Culiacán</option>
-                                                        <option>La Paz</option>
-                                                        <option>Matamoros</option>
-                                                        <option>Irapuato</option>
+                                                        <option>AB65</option>
+                                                        <option>A656</option>
+                                                        <option>A565</option>
+                                                        <option>A656</option>
+                                                        <option>A826</option>
+                                                        <option>A226</option>
+                                                        <option>A116</option>
+                                                        <option>A952</option>
+                                                        <option>A789</option>
+                                                        <option>A212</option>
+                                                        <option>A325</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="estado" class="text-black fw-bold">Estado</label>
-                                                    <input type="text" class="form-control custom-input" id="estado"
-                                                        placeholder="Estado">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="pais" class="text-black fw-bold">País</label>
-                                                    <input type="text" class="form-control custom-input" id="pais"
-                                                        placeholder="País">
+                                                <div class="form-group col-md-4 me-2">
+                                                    <label for="ciudad" class="text-black fw-bold">Calificación</label>
+                                                    <select id="ciudad" class="lista">
+                                                        <option>Seleccionar</option>
+                                                        <option>0</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="codigoPostal" class="text-black fw-bold">Código
-                                                        Postal</label>
-                                                    <input type="text" class="form-control custom-input"
-                                                        id="codigoPostal" placeholder="Código Postal">
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="comentarios">Comentarios</label>
+                                                <textarea id="comentarios" class="form-control" rows="4"
+                                                    placeholder="Escribe tus comentarios aquí..."></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-info">Enviar</button>
                                         </form>

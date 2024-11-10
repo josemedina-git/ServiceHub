@@ -407,12 +407,12 @@
                     <div class="card my-4 shadow-lg border-0">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Agregar Ubicación</h6>
+                                <h6 class="text-white text-capitalize ps-3">Asignar Suscripción</h6>
                             </div>
                         </div>
 
                         <div class="card-body px-4 pb-4">
-                            
+
                         </div>
                     </div>
 
@@ -422,12 +422,12 @@
                                 <!-- Card conteniendo el formulario -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Formulario de Direcciones</h5>
+                                        <h5 class="card-title text-center mb-4">Formulario de Suscripciones</h5>
                                         <form id="formulario" onsubmit="mostrarConfirmacion(event)">
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="cliente" class="text-black fw-bold">
-                                                        Cliente</label>
+                                                <div class="form-group col-md-4 me-4">
+                                                    <label for="cliente" class="text-black fw-bold me-6">
+                                                        Profesional</label>
                                                     <select id="cliente" class="lista">
                                                         <option selected>Seleccionar</option>
                                                         <option>Juan Marcelo</option>
@@ -436,74 +436,42 @@
                                                         <option>Gustavo Rangel</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-8">
-                                                    <label for="direccion" class="text-black fw-bold">Dirección</label>
-                                                    <input type="text" class="form-control custom-input" id="direccion"
-                                                        placeholder="Calle y número">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
+
                                                 <div class="form-group col-md-4">
-                                                    <label for="ciudad" class="text-black fw-bold">Ciudad</label>
-                                                    <select id="ciudad" class="lista">
-                                                        <option>Seleccionar</option>
-                                                        <option>Aguascalientes</option>
-                                                        <option>Acapulco</option>
-                                                        <option>Ciudad de México</option>
-                                                        <option>Guadalajara</option>
-                                                        <option>Monterrey</option>
-                                                        <option>Puebla</option>
-                                                        <option>Tijuana</option>
-                                                        <option>León</option>
-                                                        <option>Cancún</option>
-                                                        <option>Merida</option>
-                                                        <option>Chihuahua</option>
-                                                        <option>Morelia</option>
-                                                        <option>Querétaro</option>
-                                                        <option>Hermosillo</option>
-                                                        <option>Saltillo</option>
-                                                        <option>San Luis Potosí</option>
-                                                        <option>Mexicali</option>
-                                                        <option>Veracruz</option>
-                                                        <option>Durango</option>
-                                                        <option>Tuxtla Gutiérrez</option>
-                                                        <option>Tepic</option>
-                                                        <option>Oaxaca</option>
-                                                        <option>Colima</option>
-                                                        <option>Ensenada</option>
-                                                        <option>Fresnillo</option>
-                                                        <option>Los Mochis</option>
-                                                        <option>Celaya</option>
-                                                        <option>Villahermosa</option>
-                                                        <option>Culiacán</option>
-                                                        <option>La Paz</option>
-                                                        <option>Matamoros</option>
-                                                        <option>Irapuato</option>
+                                                    <label for="sus" class="text-black fw-bold">
+                                                        Suscripción</label>
+                                                    <select id="sus" class="lista" onchange="calcularFechas()">
+                                                        <option selected>Seleccionar</option>
+                                                        <option value="gratis">Gratis - $0</option>
+                                                        <option value="mensual">Mensual - $100</option>
+                                                        <option value="anual">Anual - $900</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="estado" class="text-black fw-bold">Estado</label>
-                                                    <input type="text" class="form-control custom-input" id="estado"
-                                                        placeholder="Estado">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="pais" class="text-black fw-bold">País</label>
-                                                    <input type="text" class="form-control custom-input" id="pais"
-                                                        placeholder="País">
-                                                </div>
                                             </div>
+
                                             <div class="form-row">
+                                                <div class="form-group col-md-4 me-4">
+                                                    <label for="fechaInicio" class="text-black fw-bold">Fecha de
+                                                        Inicio</label>
+                                                    <input type="datetime-local" class="form-control custom-input"
+                                                        id="fechaInicio" placeholder="Fecha de Inicio"
+                                                        onchange="calcularFechas()">
+                                                </div>
+
                                                 <div class="form-group col-md-4">
-                                                    <label for="codigoPostal" class="text-black fw-bold">Código
-                                                        Postal</label>
-                                                    <input type="text" class="form-control custom-input"
-                                                        id="codigoPostal" placeholder="Código Postal">
+                                                    <label for="fechaTermino" class="text-black fw-bold">Fecha de
+                                                        Termino</label>
+                                                    <input type="datetime-local" class="form-control custom-input"
+                                                        id="fechaTermino" placeholder="Fecha de Termino" readonly>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-info">Enviar</button>
                                         </form>
                                     </div>
                                 </div>
+
+
+
 
 
 
@@ -632,6 +600,47 @@
         function cerrarConfirmacion() {
             // Oculta el modal de confirmación
             document.getElementById("confirmacionModal").style.display = "none";
+        }
+    </script>
+    <script>
+        function calcularFechas() {
+            // Obtener la fecha de inicio y la suscripción seleccionada
+            const fechaInicioInput = document.getElementById('fechaInicio');
+            const suscripcion = document.getElementById('sus').value;
+            const fechaTerminoInput = document.getElementById('fechaTermino');
+
+            // Verificar si se ha seleccionado una fecha de inicio
+            if (fechaInicioInput.value) {
+                const fechaInicio = new Date(fechaInicioInput.value);
+
+                // Calcular la fecha de término según la suscripción
+                let fechaTermino;
+                switch (suscripcion) {
+                    case 'mensual':
+                        fechaTermino = new Date(fechaInicio);
+                        fechaTermino.setMonth(fechaInicio.getMonth() + 1); // Añadir un mes
+                        break;
+                    case 'anual':
+                        fechaTermino = new Date(fechaInicio);
+                        fechaTermino.setFullYear(fechaInicio.getFullYear() + 1); // Añadir un año
+                        break;
+                    case 'gratis':
+                        fechaTermino = fechaInicio; // No aplica un término específico para gratis
+                        break;
+                    default:
+                        fechaTermino = fechaInicio; // Si no se ha seleccionado una suscripción, la fecha de término es igual a la de inicio
+                        break;
+                }
+
+                // Actualizar la fecha de término en el input
+                const year = fechaTermino.getFullYear();
+                const month = (fechaTermino.getMonth() + 1).toString().padStart(2, '0');
+                const day = fechaTermino.getDate().toString().padStart(2, '0');
+                const hour = fechaTermino.getHours().toString().padStart(2, '0');
+                const minute = fechaTermino.getMinutes().toString().padStart(2, '0');
+
+                fechaTerminoInput.value = `${year}-${month}-${day}T${hour}:${minute}`;
+            }
         }
     </script>
     <script src="../../assets/js/core/popper.min.js"></script>

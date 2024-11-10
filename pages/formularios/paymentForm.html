@@ -407,12 +407,12 @@
                     <div class="card my-4 shadow-lg border-0">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Agregar Ubicación</h6>
+                                <h6 class="text-white text-capitalize ps-3">Agregar Pago</h6>
                             </div>
                         </div>
 
                         <div class="card-body px-4 pb-4">
-                            
+
                         </div>
                     </div>
 
@@ -422,12 +422,12 @@
                                 <!-- Card conteniendo el formulario -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Formulario de Direcciones</h5>
+                                        <h5 class="card-title text-center mb-4">Formulario de Pagos</h5>
                                         <form id="formulario" onsubmit="mostrarConfirmacion(event)">
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="cliente" class="text-black fw-bold">
-                                                        Cliente</label>
+                                                <div class="form-group col-md-4 me-4">
+                                                    <label for="cliente" class="text-black fw-bold me-6">
+                                                        Profesional</label>
                                                     <select id="cliente" class="lista">
                                                         <option selected>Seleccionar</option>
                                                         <option>Juan Marcelo</option>
@@ -436,76 +436,58 @@
                                                         <option>Gustavo Rangel</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-8">
-                                                    <label for="direccion" class="text-black fw-bold">Dirección</label>
-                                                    <input type="text" class="form-control custom-input" id="direccion"
-                                                        placeholder="Calle y número">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
+
                                                 <div class="form-group col-md-4">
-                                                    <label for="ciudad" class="text-black fw-bold">Ciudad</label>
-                                                    <select id="ciudad" class="lista">
-                                                        <option>Seleccionar</option>
-                                                        <option>Aguascalientes</option>
-                                                        <option>Acapulco</option>
-                                                        <option>Ciudad de México</option>
-                                                        <option>Guadalajara</option>
-                                                        <option>Monterrey</option>
-                                                        <option>Puebla</option>
-                                                        <option>Tijuana</option>
-                                                        <option>León</option>
-                                                        <option>Cancún</option>
-                                                        <option>Merida</option>
-                                                        <option>Chihuahua</option>
-                                                        <option>Morelia</option>
-                                                        <option>Querétaro</option>
-                                                        <option>Hermosillo</option>
-                                                        <option>Saltillo</option>
-                                                        <option>San Luis Potosí</option>
-                                                        <option>Mexicali</option>
-                                                        <option>Veracruz</option>
-                                                        <option>Durango</option>
-                                                        <option>Tuxtla Gutiérrez</option>
-                                                        <option>Tepic</option>
-                                                        <option>Oaxaca</option>
-                                                        <option>Colima</option>
-                                                        <option>Ensenada</option>
-                                                        <option>Fresnillo</option>
-                                                        <option>Los Mochis</option>
-                                                        <option>Celaya</option>
-                                                        <option>Villahermosa</option>
-                                                        <option>Culiacán</option>
-                                                        <option>La Paz</option>
-                                                        <option>Matamoros</option>
-                                                        <option>Irapuato</option>
+                                                    <label for="sus" class="text-black fw-bold">
+                                                        Suscripción</label>
+                                                    <select id="sus" class="lista" onchange="calcularImporte()">
+                                                        <option selected>Seleccionar</option>
+                                                        <option value="gratis">Gratis - $0</option>
+                                                        <option value="mensual">Mensual - $100</option>
+                                                        <option value="anual">Anual - $900</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="estado" class="text-black fw-bold">Estado</label>
-                                                    <input type="text" class="form-control custom-input" id="estado"
-                                                        placeholder="Estado">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="pais" class="text-black fw-bold">País</label>
-                                                    <input type="text" class="form-control custom-input" id="pais"
-                                                        placeholder="País">
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="importe" class="text-black fw-bold">Importe</label>
+                                                    <input type="text" class="form-control custom-input" id="importe"
+                                                        placeholder="Importe" readonly>
                                                 </div>
                                             </div>
+
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
-                                                    <label for="codigoPostal" class="text-black fw-bold">Código
-                                                        Postal</label>
-                                                    <input type="text" class="form-control custom-input"
-                                                        id="codigoPostal" placeholder="Código Postal">
+                                                    <label for="metodoPago" class="text-black fw-bold">
+                                                        Método De Pago </label>
+                                                    <select id="metodoPago" class="lista">
+                                                        <option selected>Seleccionar</option>
+                                                        <option value="credito">Tarjeta de Crédito</option>
+                                                        <option value="debito">Tarjeta de Débito</option>
+                                                        <option value="paypal">PayPal</option>
+                                                    </select>
                                                 </div>
                                             </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="status" class="text-black fw-bold">
+                                                        Status </label><br>
+                                                    <select id="status" class="lista">
+                                                        <option selected>Seleccionar</option>
+                                                        <option value="Pendiente">Pendiente</option>
+                                                        <option value="Cancelado">Cancelado</option>
+                                                        <option value="Pagado">Pagado</option>
+                                                        <option value="Vencido">Vencido</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
                                             <button type="submit" class="btn btn-info">Enviar</button>
                                         </form>
                                     </div>
                                 </div>
-
-
 
                             </div>
                         </div>
@@ -520,8 +502,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
 
 
@@ -621,6 +601,7 @@
         </div>
     </div>
     <!--   Core JS Files   -->
+
     <script>
         function mostrarConfirmacion(event) {
             event.preventDefault(); // Evita el envío del formulario
@@ -632,6 +613,33 @@
         function cerrarConfirmacion() {
             // Oculta el modal de confirmación
             document.getElementById("confirmacionModal").style.display = "none";
+        }
+    </script>
+    <script>
+        function calcularImporte() {
+            // Obtener el valor de la suscripción seleccionada
+            const suscripcion = document.getElementById('sus').value;
+            const importeInput = document.getElementById('importe');
+
+            // Calcular el importe según la suscripción seleccionada
+            let importe = 0;
+            switch (suscripcion) {
+                case 'gratis':
+                    importe = 0;
+                    break;
+                case 'mensual':
+                    importe = 100;
+                    break;
+                case 'anual':
+                    importe = 900;
+                    break;
+                default:
+                    importe = 0;
+                    break;
+            }
+
+            // Actualizar el campo de importe con el valor calculado
+            importeInput.value = "$" + importe;
         }
     </script>
     <script src="../../assets/js/core/popper.min.js"></script>
