@@ -17,6 +17,16 @@
     <link href="css/responsive.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+
+      .agenda-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: auto;
+        width: 70%;
+      }
+
       .search-icon {
         color: white;
         cursor: pointer;
@@ -40,6 +50,21 @@
       .service-list li a {
         font-weight: bold;
         color: black;
+        padding-left: 35px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: auto;
+        width: 20%;
+      }
+
+      .service-list li i {
+        padding-left: 35px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: auto;
+        width: 10%;
       }
 
       .favorite-icon {
@@ -101,22 +126,22 @@
   <!-- Sección de servicios favoritos -->
   <section class="favorite_section layout_padding">
     <div class="container">
-      <h2>Servicios Favoritos</h2>
+      <h2 class="text-center" style="font-weight: bold; margin-bottom: 50px;">Servicios Favoritos</h2>
       <ul class="service-list">
         <li>
-          <a href="gardening.html">Jardinería</a>
+          <a href="gardening.html">Jardinería</a> <p class="agenda-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus vero fuga repellat distinctio minima vel quos nulla hic! Cum reiciendis deleniti iste saepe, eligendi minima soluta sequi quos molestias!</p>
           <i class="fas fa-star favorite-icon" onclick="toggleFavorite(this)"></i>
         </li>
         <li>
-          <a href="plumb.html">Plomería</a>
+          <a href="plumb.html">Plomería</a> <p class="agenda-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus vero fuga repellat distinctio minima vel quos nulla hic! Cum reiciendis deleniti iste saepe, eligendi minima soluta sequi quos molestias!</p>
           <i class="fas fa-star favorite-icon" onclick="toggleFavorite(this)"></i>
         </li>
         <li>
-          <a href="cleaning.html">Limpieza</a>
+          <a href="cleaning.html">Limpieza</a> <p class="agenda-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus vero fuga repellat distinctio minima vel quos nulla hic! Cum reiciendis deleniti iste saepe, eligendi minima soluta sequi quos molestias!</p>
           <i class="fas fa-star favorite-icon" onclick="toggleFavorite(this)"></i>
         </li>
         <li>
-          <a href="packing.html">Mudanza</a>
+          <a href="packing.html">Mudanza</a> <p class="agenda-content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus vero fuga repellat distinctio minima vel quos nulla hic! Cum reiciendis deleniti iste saepe, eligendi minima soluta sequi quos molestias!</p>
           <i class="fas fa-star favorite-icon" onclick="toggleFavorite(this)"></i>
         </li>
       </ul>
@@ -181,7 +206,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="updateprofileprofesional.html">
+                    <a href="pages/sign-in-professional.html">
                       Cuenta Profesionista
                     </a>
                   </li>

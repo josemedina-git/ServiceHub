@@ -84,7 +84,7 @@
     <!-- end header section -->
   </div>
 <!-- service section -->
-<section class="service_section">
+<section class="service_section" style="margin-top: 100px; margin-bottom: 250px;">
   <div class="container">
 
     <div class="service_profile">
@@ -102,56 +102,9 @@
         <p class="service-description">
           Ofrecemos servicios de jardinería profesional, diseño de paisajismo, poda de árboles y mantenimiento de jardines. Servicios confiables y personalizados para tu hogar.
         </p>
-        <button class="view-more-btn" data-target="contact-info-1" style="margin-bottom: 30px;">Ver más detalles</button>
-
-        <div id="contact-info-1" class="contact-info" style="display: none;">
-          <p><strong>Nombre:</strong> Juan Pérez</p>
-          <p><strong>Teléfono:</strong> +52 449 456 7890</p>
-          <p><strong>Correo Electrónico:</strong> juanperez@email.com</p>
-          <p><strong>Dirección:</strong> Aguascalientes</p>
-
-          <div class="rating-section">
-            <h5>Opiniones de Usuarios:</h5>
-            <div class="rating" style="text-align: justify;">
-              <p><strong>ñoño</strong> - ⭐⭐⭐⭐</p>
-              <p>"Excelente servicio, muy profesional!"</p>
-              <p><strong>cleotildegonzalez</strong> - ⭐⭐⭐⭐⭐</p>
-              <p>"Recomendado, cumplió con todo lo prometido."</p>
-              <p><strong>enriquesegoviano</strong> - ⭐⭐⭐</p>
-              <p>"Buen trabajo, aunque un poco caro."</p>
-            </div>
-
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-md-6">
-                  <h3 class="text-center mt-5">Agendar Servicio</h3>
-                  <form id="agendarForm" class="mt-4">
-                    <div class="form-group">
-                      <label for="fecha">Selecciona una fecha:</label>
-                      <input type="date" class="form-control" id="fecha" required>
-                    </div>
-          
-                    <div class="form-group">
-                      <label for="nota">Agrega una nota:</label>
-                      <textarea class="form-control" id="nota" rows="3" placeholder="Escribe una nota..." required></textarea>
-                    </div>
-          
-                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #feb543;">Agendar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="view-more-btn" data-target="contact-info-1" style="margin-bottom: 30px;"><a title="Agendar" style="text-decoration: none; color: #fff;" href="profileservice.html">Ver mas</a></button>
       </div>
     </div>
-
-    <script>
-      document.getElementById('agendarForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevenir el envío del formulario para que no recargue la página
-        window.location.href = 'agenda.html'; // Redirigir a index.html
-      });
-    </script>
 
     <div class="service_profile">
       <div class="profile-img-box">
@@ -168,81 +121,11 @@
         <p class="service-description">
           Especialistas en paisajismo, poda de árboles y mantenimiento de jardines. Nos adaptamos a tus necesidades.
         </p>
-        <button class="view-more-btn" data-target="contact-info-2" style="margin-bottom: 30px;">Ver más detalles</button>
-
-        <div id="contact-info-2" class="contact-info" style="display: none;">
-          <p><strong>Nombre:</strong> Vannevar Bush</p>
-          <p><strong>Teléfono:</strong> +52 449 654 3210</p>
-          <p><strong>Correo Electrónico:</strong> vannevarbush@email.com</p>
-
-          <div class="rating-section">
-            <h5>Opiniones de Usuarios:</h5>
-            <div class="rating" style="text-align: justify;">
-              <p><strong>donpanchito</strong> - ⭐⭐⭐⭐</p>
-              <p>"El trabajo fue excepcional!"</p>
-              <p><strong>jojorgedfalcon</strong> - ⭐⭐⭐⭐⭐</p>
-              <p>"Gran atención y dedicación."</p>
-              <p><strong>rockstarhci</strong> - ⭐⭐⭐</p>
-              <p>"Buena jardinería, aunque tardaron un poco."</p>
-            </div>
-
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-md-6">
-                  <h3 class="text-center mt-5">Agendar Servicio</h3>
-                  <form id="agendarForm" class="mt-4">
-                    <div class="form-group">
-                      <label for="fecha">Selecciona una fecha:</label>
-                      <input type="date" class="form-control" id="fecha" required>
-                    </div>
-          
-                    <div class="form-group">
-                      <label for="nota">Agrega una nota:</label>
-                      <textarea class="form-control" id="nota" rows="3" placeholder="Escribe una nota..." required></textarea>
-                    </div>
-          
-                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #feb543;">Agendar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="view-more-btn" data-target="contact-info-2" style="margin-bottom: 30px;"><a title="Agendar" style="text-decoration: none; color: #fff;" href="profileservice.html">Ver mas</a></button>
       </div>
     </div>
-
-    <div>
-      <a href="index.html">
-        Ver más
-      </a>
-    </div>
-
   </div>
 </section>
-
-<script>
-  document.querySelectorAll('.view-more-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const target = document.getElementById(this.getAttribute('data-target'));
-      if (target.style.display === "none") {
-        target.style.display = "block";
-        this.textContent = "Ocultar detalles"; 
-      } else {
-        target.style.display = "none";
-        this.textContent = "Ver más detalles"; 
-      }
-    });
-  });
-
-  document.querySelectorAll('.open-modal').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const opinionForm = this.closest('.rating-section').querySelector('.opinion-form');
-      opinionForm.style.display = 'block';
-      this.parentElement.style.display = 'none'; 
-    });
-  });
-</script>
 
 <!-- end service section -->
 
@@ -302,7 +185,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="updateprofileprofesional.html">
+                  <a href="pages/sign-in-professional.html">
                     Cuenta Profesionista
                   </a>
                 </li>
