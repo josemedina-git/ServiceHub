@@ -403,13 +403,16 @@
                 <div class="col-12">
 
 
+
                     <div class="card my-4 shadow-lg border-0">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Agregar Categoría al Servicio</h6>
+                                <h6 class="text-white text-capitalize ps-3">Asignar Servicio al Profesional</h6>
                             </div>
                         </div>
+
                         <div class="card-body px-4 pb-4">
+
                         </div>
                     </div>
 
@@ -419,83 +422,25 @@
                                 <!-- Card conteniendo el formulario -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Formulario de Servicios y Categorias</h5>
+                                        <h5 class="card-title text-center mb-4">Formulario</h5>
                                         <form id="formulario" onsubmit="mostrarConfirmacion(event)">
-                                            <div class="form-row me-2">
-
-                                                <div class="form-group col-md-4 me-6">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4 me-8">
                                                     <label for="cliente" class="text-black fw-bold">
                                                         Servicio</label>
-                                                    <select id="servicio" class="lista">
+                                                    <select id="cliente" class="lista">
                                                         <option selected>Seleccionar</option>
-
-                                                        <option>Reparación de fugas</option>
-                                                        <option>Instalación de grifos y lavabos</option>
-                                                        <option>Mantenimiento de sistemas de drenaje</option>
-                                                        <option>Desatasco de tuberías</option>
-
                                                         <!-- Electricidad -->
-                                                        <option>Instalación de interruptores y enchufes</option>
+                                                        <option>Instalación de interruptores</option>
                                                         <option>Reparación de cortocircuitos</option>
                                                         <option>Instalación de lámparas y bombillas</option>
                                                         <option>Reemplazo de cableado eléctrico</option>
-
-                                                        <!-- Carpintería -->
-                                                        <option>Fabricación de muebles a medida</option>
-                                                        <option>Instalación de puertas y ventanas</option>
-                                                        <option>Reparación de muebles de madera</option>
-                                                        <option>Restauración de muebles antiguos</option>
-
-                                                        <!-- Jardinería -->
-                                                        <option>Diseño y mantenimiento de jardines</option>
-                                                        <option>Siembra de plantas y árboles</option>
-                                                        <option>Recorte y poda de arbustos</option>
-                                                        <option>Instalación de sistemas de riego</option>
-
-                                                        <!-- Limpieza -->
-                                                        <option>Limpieza general de casas</option>
-                                                        <option>Limpiar alfombras y tapicería</option>
-                                                        <option>Lavado de ventanas</option>
-                                                        <option>Limpieza de oficinas</option>
-
-                                                        <!-- Pintura -->
-                                                        <option>Pintura de interiores</option>
-                                                        <option>Pintura de exteriores</option>
-                                                        <option>Pintura de muebles</option>
-                                                        <option>Pintura de fachadas</option>
-
-                                                        <!-- Cerrajería -->
-                                                        <option>Apertura de cerraduras</option>
-                                                        <option>Instalación de cerraduras nuevas</option>
-                                                        <option>Reparación de cerraduras dañadas</option>
-                                                        <option>Cambio de llaves</option>
-
-                                                        <!-- Reparación de electrodomésticos -->
-                                                        <option>Reparación de refrigeradores</option>
-                                                        <option>Reparación de lavadoras</option>
-                                                        <option>Reparación de microondas</option>
-                                                        <option>Reparación de estufas</option>
-
-                                                        <!-- Servicio de mudanza -->
-                                                        <option>Embalaje y transporte de muebles</option>
-                                                        <option>Desmontaje y montaje de muebles</option>
-                                                        <option>Traslado de electrodomésticos</option>
-                                                        <option>Mudanza de oficina</option>
-
-                                                        <!-- Albañilería -->
-                                                        <option>Construcción de paredes</option>
-                                                        <option>Reparación de paredes y techos</option>
-                                                        <option>Instalación de pisos</option>
-                                                        <option>Colocación de azulejos y cerámica</option>
-
                                                     </select>
                                                 </div>
-                                                <br>
-
-
                                                 <div class="form-group col-md-4 me-2">
-                                                    <label for="categoria" class="text-black fw-bold">Categoría</label>
-                                                    <select id="categoria" class="lista">
+                                                    <label for="category" class="text-black fw-bold">
+                                                        Categoria</label>
+                                                    <select id="category" class="lista">
                                                         <option selected>Seleccionar</option>
                                                         <option>Plomería</option>
                                                         <option>Electricidad</option>
@@ -510,10 +455,12 @@
                                                     </select>
                                                 </div>
                                             </div>
+
                                             <button type="submit" class="btn btn-info">Enviar</button>
                                         </form>
                                     </div>
                                 </div>
+
 
 
                             </div>
