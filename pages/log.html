@@ -14,11 +14,21 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
+<script>
+  function toggleSubmenu(menuId, linkElement) {
+    var submenu = document.getElementById(menuId);
+    var isExpanded = submenu.style.display === "block";
+
+    submenu.style.display = isExpanded ? "none" : "block";
+    linkElement.classList.toggle("expanded", !isExpanded);
+    linkElement.classList.toggle("collapsed", isExpanded);
+  }
+</script>
 <body class="g-sidenav-show bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand px-4 py-3 m-0" href="https://demos.creative-tim.com/material-dashboard/pages/dashboard" target="_blank">
+      <a class="navbar-brand px-4 py-3 m-0" href="dashboard.html">
         <img src="../images/logosh.jpeg" navbar-brand-img width="26" height="26" alt="main_logo">
         <span class="ms-1 text-sm text-dark">Administrador</span>
       </a>
@@ -33,6 +43,7 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link text-dark collapsed" href="#!" onclick="toggleSubmenu('professional-menu', this)">
             <i class="material-symbols-rounded opacity-5">person</i>
@@ -40,10 +51,21 @@
             <i class="material-symbols-rounded dropdown-arrow">expand_more</i>
           </a>
           <ul id="professional-menu" class="submenu">
-            <li><a class="nav-link text-dark" href="table_professional.html"><i class="material-symbols-rounded opacity-5">table_chart</i><span class="nav-link-text ms-1">Tabla Profesional</span></a></li>
-            <li><a class="nav-link text-dark" href="professionalservice.html"><i class="material-symbols-rounded opacity-5">build</i><span class="nav-link-text ms-1">Servicio Profesional</span></a></li>
+            <li>
+              <a class="nav-link text-dark" href="tableProfesional.html">
+                <i class="material-symbols-rounded opacity-5">table_chart</i>
+                <span class="nav-link-text ms-1">Tabla Profesional</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link text-dark" href="tableProfesionalService.html">
+                <i class="material-symbols-rounded opacity-5">build</i>
+                <span class="nav-link-text ms-1">Servicio Profesional</span>
+              </a>
+            </li>    
           </ul>
-        </li>
+        </li>  
+        
         <li class="nav-item">
           <a class="nav-link text-dark collapsed" href="#!" onclick="toggleSubmenu('service-menu', this)">
             <i class="material-symbols-rounded opacity-5">build</i>
@@ -52,21 +74,21 @@
           </a>
           <ul id="service-menu" class="submenu">
             <li>
-              <a class="nav-link text-dark" href="table_service.html">
+              <a class="nav-link text-dark" href="tableService.html">
                 <i class="material-symbols-rounded opacity-5">table_chart</i>
                 <span class="nav-link-text ms-1">Tabla Servicios</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="review.html">
+              <a class="nav-link text-dark" href="tableReview.html">
                 <i class="material-symbols-rounded opacity-5">assignment</i>
-                <span class="nav-link-text ms-1">Resumen</span>
+                <span class="nav-link-text ms-1">Reseñas</span>
               </a>
             </li>       
             <li>
-              <a class="nav-link text-dark" href="servicecategory.html">
+              <a class="nav-link text-dark" href="tableServiceCategory.html">
                 <i class="material-symbols-rounded opacity-5">assignment</i>
-                <span class="nav-link-text ms-1">Categoría</span>
+                <span class="nav-link-text ms-1">Categorías de Servicios</span>
               </a>
             </li> 
           </ul>
@@ -80,19 +102,17 @@
           </a>
           <ul id="category-menu" class="submenu">
             <li>
-              <a class="nav-link text-dark" href="table_category.html">
+              <a class="nav-link text-dark" href="tableCategory.html">
                 <i class="material-symbols-rounded opacity-5">table_chart</i>
                 <span class="nav-link-text ms-1">Tabla Categorías</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="keyword.html">
+              <a class="nav-link text-dark" href="tableKeyWord.html">
                 <i class="material-symbols-rounded opacity-5">search</i>
                 <span class="nav-link-text ms-1">Keywords</span>
               </a>
             </li>
-          
-            
           </ul>
         </li>
         
@@ -104,25 +124,23 @@
           </a>
           <ul id="client-menu" class="submenu">
             <li>
-              <a class="nav-link text-dark" href="table_client.html">
+              <a class="nav-link text-dark" href="tableCustomers.html">
                 <i class="material-symbols-rounded opacity-5">table_chart</i>
                 <span class="nav-link-text ms-1">Tabla Clientes</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="location.html">
+              <a class="nav-link text-dark" href="tableLocation.html">
                 <i class="material-symbols-rounded opacity-5">location_on</i>
-                <span class="nav-link-text ms-1">Ubicación</span>
+                <span class="nav-link-text ms-1">Ubicaciónes</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="agenda.html">
+              <a class="nav-link text-dark" href="tableAgenda.html">
                 <i class="material-symbols-rounded opacity-5">event</i>
                 <span class="nav-link-text ms-1">Agenda</span>
               </a>
             </li>
-    
-
           </ul>
         </li>
         
@@ -134,25 +152,25 @@
           </a>
           <ul id="suscription-menu" class="submenu">
             <li>
-              <a class="nav-link text-dark" href="table_suscription.html">
+              <a class="nav-link text-dark" href="tableSuscription.html">
                 <i class="material-symbols-rounded opacity-5">table_chart</i>
                 <span class="nav-link-text ms-1">Tabla Suscripciones</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="typesuscription.html">
+              <a class="nav-link text-dark" href="tablaTypeSusciption.html">
                 <i class="material-symbols-rounded opacity-5">subscriptions</i>
                 <span class="nav-link-text ms-1">Tipo de Suscripción</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="payment.html">
+              <a class="nav-link text-dark" href="tablePayment.html">
                 <i class="material-symbols-rounded opacity-5">payment</i>
                 <span class="nav-link-text ms-1">Pago</span>
               </a>
             </li>
             <li>
-              <a class="nav-link text-dark" href="typepayment.html">
+              <a class="nav-link text-dark" href="tableTypePayment.html">
                 <i class="material-symbols-rounded opacity-5">credit_card</i>
                 <span class="nav-link-text ms-1">Tipo de Pago</span>
               </a>
@@ -162,16 +180,9 @@
         </li>   
 
         <li class="nav-item">
-          <a class="nav-link text-dark" href="orders.html">
+          <a class="nav-link text-dark" href="ordenes.html">
             <i class="material-symbols-rounded opacity-5">shopping_cart</i>
-            <span class="nav-link-text ms-1">Órdenes de compra</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="statistics.html">
-            <i class="material-symbols-rounded opacity-5">bar_chart</i>
-            <span class="nav-link-text ms-1">Estadísticas</span>
+            <span class="nav-link-text ms-1">Registro de Suscripciones</span>
           </a>
         </li>
 
@@ -186,6 +197,124 @@
     </div>
   </aside>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg "> 
+      <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+              <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Páginas</a></li>
+              <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+            </ol>
+          </nav>
+          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+              <div class="input-group input-group-outline">
+                <label class="form-label">Escribe aquí...</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <ul class="navbar-nav d-flex align-items-center  justify-content-end">
+              <li class="nav-item d-flex align-items-center">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
+              </li>
+              <li class="mt-1">
+                <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Favoritos</a>
+              </li>
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item px-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-body p-0">
+                  <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
+                </a>
+              </li>
+              <li class="nav-item dropdown pe-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="material-symbols-rounded">notifications</i>
+                </a>
+                <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="my-auto">
+                          <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            <span class="font-weight-bold">Nuevo mensaje</span> de Ivana
+                          </h6>
+                          <p class="text-xs text-secondary mb-0">
+                            <i class="fa fa-clock me-1"></i>
+                            13 minutes ago
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="my-auto">
+                          <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            <span class="font-weight-bold">New album</span> de 
+                          </h6>
+                          <p class="text-xs text-secondary mb-0">
+                            <i class="fa fa-clock me-1"></i>
+                            1 day
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                          <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>credit-card</title>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                <g transform="translate(1716.000000, 291.000000)">
+                                  <g transform="translate(453.000000, 454.000000)">
+                                    <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
+                                    <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                  </g>
+                                </g>
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            Payment successfully completed
+                          </h6>
+                          <p class="text-xs text-secondary mb-0">
+                            <i class="fa fa-clock me-1"></i>
+                            2 days
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item d-flex align-items-center">
+                <a href="admin.html" class="nav-link text-body font-weight-bold px-0">
+                  <i class="material-symbols-rounded">account_circle</i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <div class="container py-4">
         <h2 class="text-center">Bitácora de Movimientos</h2>
         <table id="logTable" class="display" style="width:100%">
