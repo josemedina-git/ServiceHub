@@ -109,61 +109,98 @@
     <!-- end header section -->
   </div>
   <div class="container">
-    <div class="custom_heading-container">
-      <h1 class="h1-sub">
-        Suscripcion Premium
+    <div class="custom_heading-container text-center">
+      <h1 class="h1-sub mb-4" style="font-size: 36px; font-weight: bold; color: #7b00ff;">
+        Suscripción Premium
       </h1>
     </div>
   </div>
+  
   <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2 class="text-center mb-4">$99.99 / mes</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="cardName" class="form-label">Nombre en la tarjeta</label>
-                    <input type="text" class="form-control" id="cardName" placeholder="Nombre completo" required>
-                </div>
-                <div class="mb-3">
-                    <label for="cardNumber" class="form-label">Número de tarjeta</label>
-                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="expiryDate" class="form-label">Fecha de expiración</label>
-                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="cvv" placeholder="123" required>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="billingAddress" class="form-label">Dirección de facturación</label>
-                    <input type="text" class="form-control" id="billingAddress" placeholder="Calle, número, ciudad" required>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="custom-btn" data-bs-toggle="modal" data-bs-target="#successModal">
-                        Realizar Pago
-                    </button>
-                </div>
-            </form>
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+          <h2 class="text-center mb-4" style="font-weight: bold; color: #28a745;">$99.99 / mes</h2>
+          <form id="subscriptionForm">
+            <div class="mb-3">
+              <label for="cardName" class="form-label">Nombre en la tarjeta</label>
+              <input type="text" class="form-control" id="cardName" placeholder="Nombre completo" required>
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Número de tarjeta</label>
+              <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="expiryDate" class="form-label">Fecha de expiración</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="123" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="billingAddress" class="form-label">Dirección de facturación</label>
+              <input type="text" class="form-control" id="billingAddress" placeholder="Calle, número, ciudad" required>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary w-100 py-2" style="font-size: 18px;" id="payButton">
+                Realizar Pago
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
   </div>
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <div class="mb-4">
-                        <i class="success-icon bi bi-check-circle-fill"></i>
-                    </div>
-                    <h5>¡Pago realizado con exito!</h5>
-                    <button type="button" class="btn btn-secondary mt-4" id="closeBtn" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+  
+  <!-- Modal de éxito -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="mb-4">
+            <i class="success-icon bi bi-check-circle-fill" style="font-size: 48px; color: #28a745;"></i>
+          </div>
+          <h5>¡Pago realizado con éxito!</h5>
+          <button type="button" class="btn btn-secondary mt-4" id="closeBtn" data-bs-dismiss="modal">Cerrar</button>
         </div>
+      </div>
     </div>
+  </div>
+  
+  <script>
+    document.getElementById("payButton").addEventListener("click", function () {
+      const fields = [
+        { id: "cardName", name: "Nombre en la tarjeta" },
+        { id: "cardNumber", name: "Número de tarjeta" },
+        { id: "expiryDate", name: "Fecha de expiración" },
+        { id: "cvv", name: "CVV" },
+        { id: "billingAddress", name: "Dirección de facturación" }
+      ];
+  
+      let missingFields = [];
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        if (!input.value.trim()) {
+          missingFields.push(field.name);
+        }
+      });
+  
+      if (missingFields.length > 0) {
+        alert("Por favor llena los siguientes campos: \n" + missingFields.join("\n"));
+      } else {
+        // Mostrar modal de éxito
+        const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        successModal.show();
+      }
+    });
+  </script>
+  
+  <br>
+  <br>
+  <br>
   <br>
   <br>
   <div class="footer_bg">

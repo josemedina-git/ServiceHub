@@ -85,34 +85,71 @@
   </script>
     <!-- end header section -->
   </div>
-        <div class="container-center-update">
-            <div class="update-box">
-                <h2>Actualizar Perfil</h2>
-
-                <div class="profile-pic">
-                    <img src="https://via.placeholder.com/120" id="profileImage" alt="Foto de perfil">
-                </div>
-
-                <div class="upload-btn">
-                    <label for="profileUpload"><i class="fas fa-upload me-2"></i> Subir Foto</label>
-                    <input type="file" id="profileUpload" accept="image/*" onchange="loadProfileImage(event)">
-                </div>
-
-                <form id="updateProfileForm">
-                    <input type="text" id="name" class="form-control" placeholder="Nombre" required>
-                    <input type="text" id="surname" class="form-control" placeholder="Apellido" required>
-                    <input type="email" id="email" class="form-control" placeholder="Correo" required>
-                    <input type="tel" id="phone" class="form-control" placeholder="Teléfono" required>
-                    <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
-                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña"
-                        required>
-                    <button type="submit">Aceptar</button>
-                </form>
-
-            </div>
+  <div class="container-center-update d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(to bottom right, #6a11cb, #2575fc); padding: 20px;">
+    <div class="update-box shadow-lg p-4" style="background-color: #fff; border-radius: 15px; width: 100%; max-width: 600px;">
+      <h2 class="text-center mb-4" style="color: #6a11cb; font-weight: bold;">Actualizar Perfil</h2>
+  
+      <!-- Imagen de Perfil -->
+      <div class="text-center mb-4">
+        <div class="profile-pic mb-3" style="position: relative; width: 120px; height: 120px; margin: 0 auto;">
+          <img src="https://via.placeholder.com/120" id="profileImage" alt="Foto de perfil" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #6a11cb;">
+          <label for="profileUpload" style="position: absolute; bottom: -5px; right: -5px; background-color: #6a11cb; color: #fff; padding: 5px; border-radius: 50%; cursor: pointer;">
+            <i class="fas fa-upload"></i>
+          </label>
+          <input type="file" id="profileUpload" accept="image/*" style="display: none;" onchange="loadProfileImage(event)">
         </div>
+      </div>
+  
+      <!-- Formulario -->
+      <form id="updateProfileForm">
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label" style="color: #6a11cb;">Nombre</label>
+            <input type="text" id="name" class="form-control" placeholder="Ingresa tu nombre" required>
+          </div>
+          <div class="col-md-6">
+            <label for="surname" class="form-label" style="color: #6a11cb;">Apellido</label>
+            <input type="text" id="surname" class="form-control" placeholder="Ingresa tu apellido" required>
+          </div>
+        </div>
+  
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="email" class="form-label" style="color: #6a11cb;">Correo</label>
+            <input type="email" id="email" class="form-control" placeholder="Ingresa tu correo" required>
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label" style="color: #6a11cb;">Teléfono</label>
+            <input type="tel" id="phone" class="form-control" placeholder="Ingresa tu teléfono" required>
+          </div>
+        </div>
+  
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="password" class="form-label" style="color: #6a11cb;">Contraseña</label>
+            <input type="password" id="password" class="form-control" placeholder="Ingresa tu contraseña" required>
+          </div>
+          <div class="col-md-6">
+            <label for="confirmPassword" class="form-label" style="color: #6a11cb;">Confirmar Contraseña</label>
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirma tu contraseña" required>
+          </div>
+        </div>
+  
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary w-50" style="background-color: #6a11cb; border: none;">Aceptar</button>
+        </div>
+      </form>
     </div>
-
+  </div>
+  
+  <script>
+    // Función para previsualizar la imagen de perfil
+    function loadProfileImage(event) {
+      const profileImage = document.getElementById('profileImage');
+      profileImage.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+  
     <div class="footer_bg">
         <!-- info section -->
         <section class="info_section layout_padding2-bottom">
