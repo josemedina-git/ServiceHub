@@ -235,15 +235,13 @@
                                                 4562&nbsp;&nbsp;&nbsp;1122&nbsp;&nbsp;&nbsp;4594&nbsp;&nbsp;&nbsp;7852
                                             </h5>
                                             <div class="d-flex">
-                                                <div class="d-flex">
-                                                    <div class="me-4">
-                                                        <p class="text-white text-sm opacity-8 mb-0">Propietario</p>
-                                                        <h6 class="text-white mb-0">Juan Pérez López</h6>
-                                                    </div>
-                                                    <div>
-                                                        <p class="text-white text-sm opacity-8 mb-0">Expires</p>
-                                                        <h6 class="text-white mb-0">11/26</h6>
-                                                    </div>
+                                                <div class="me-4">
+                                                    <p class="text-white text-sm opacity-8 mb-0">Propietario</p>
+                                                    <h6 class="text-white mb-0">Juan Pérez López</h6>
+                                                </div>
+                                                <div>
+                                                    <p class="text-white text-sm opacity-8 mb-0">Expires</p>
+                                                    <h6 class="text-white mb-0">11/26</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +267,6 @@
                                                 <span class="text-xs">Inicio: 06/01/2024 </span>
                                                 <br>
                                                 <span class="text-xs">Vencimiento: 07/01/2024 </span>
-                                                <br>
                                             </div>
                                         </div>
                                     </div>
@@ -294,8 +291,27 @@
                                 </div>
                             </div>
                         </div>
+                
+                        <!-- Botones alineados -->
+                        <div class="d-flex justify-content-center mt-3">
+                            <div class="me-2">
+                                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                                <stripe-buy-button
+                                    buy-button-id="buy_btn_1QTz6yDsXAJgcmBK70ajkVg7"
+                                    publishable-key="pk_test_51QP6yGDsXAJgcmBKYZ5kLrlwbJlRfWi0yExE4ofibew3SXSor2xD6Fz5pvuRJxBTRLoFyA8JIUCHA1PQDuuxNz3H00V5LFNrRl">
+                                </stripe-buy-button>
+                            </div>
+                            <div>
+                                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                                <stripe-buy-button
+                                    buy-button-id="buy_btn_1QTz9yDsXAJgcmBKbUtoR4VD"
+                                    publishable-key="pk_test_51QP6yGDsXAJgcmBKYZ5kLrlwbJlRfWi0yExE4ofibew3SXSor2xD6Fz5pvuRJxBTRLoFyA8JIUCHA1PQDuuxNz3H00V5LFNrRl">
+                                </stripe-buy-button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
 
 
                 <div class="col-12 mt-4">
