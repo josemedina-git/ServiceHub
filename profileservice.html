@@ -80,66 +80,78 @@
       </div>
 
   <!-- Sección de servicios favoritos -->
-  <section class="favorite_section layout_padding text-center">
-    <div class="container my-5">
-      <h2 class="text-center" style="font-weight: bold; margin-bottom: 50px;">Nombre del servicio</h2>
-      <div class="card mb-4">
-        <div class="card-body text-center">
-          <!-- Imagen del Profesional -->
-          <img src="https://via.placeholder.com/150" alt="Imagen del Profesionista" class="profile-img mb-3">
-          
-          <!-- Nombre del Profesional -->
-          <h4>Nombre del Profesionista</h4>
-          
-          <!-- Descripción del Servicio -->
-          <p class="text-muted">Descripción del servicio ofrecido. Aquí puedes agregar detalles sobre el tipo de trabajo que realiza y qué lo hace especial.</p>
-          
-          <!-- Precio por Hora -->
-          <h5>Precio por Hora: $50.00</h5>
-          
-          <!-- Botón para Agendar -->
-  <a href="agendar.html" class="btn btn-primary mt-3" style="background-color:  #884cdc;">Agendar</a>
+<section class="favorite_section layout_padding text-center" style="background-color: #f9f9f9; padding: 50px 0;">
+  <div class="container">
+    <!-- Título de la Sección -->
+    <h2 class="text-center mb-5" style="font-weight: bold; font-size: 36px; color: #333;">Nombre del Servicio</h2>
+
+    <!-- Tarjeta de Servicio -->
+    <div class="card shadow-lg mb-4" style="border-radius: 15px; overflow: hidden;">
+      <div class="card-body text-center p-5">
+        <!-- Imagen del Profesional -->
+        <div class="profile-img-container mb-4" style="border-radius: 50%; overflow: hidden; width: 150px; height: 150px; margin: 0 auto;">
+          <img src="https://via.placeholder.com/150" alt="Imagen del Profesionista" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
+
+        <!-- Nombre del Profesional -->
+        <h4 class="mb-3" style="font-weight: bold; color: #444;">Nombre del Profesionista</h4>
+
+        <!-- Descripción del Servicio -->
+        <p class="text-muted mb-4" style="font-size: 16px;">
+          Descripción del servicio ofrecido. Aquí puedes agregar detalles sobre el tipo de trabajo que realiza y qué lo hace especial.
+        </p>
+
+        <!-- Precio por Hora -->
+        <h5 class="mb-4" style="font-weight: bold; color: #884cdc;">Precio por Hora: $50.00</h5>
+
+        <!-- Botón para Agendar -->
+        <a href="agendar.html" class="btn btn-primary" style="background-color: #884cdc; border-color: #884cdc; padding: 10px 20px; font-size: 16px; border-radius: 25px;">
+          Agendar
+        </a>
       </div>
-  
-      <!-- Sección de Reseñas -->
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Reseñas</h5>
-          
+    </div>
+
+    <!-- Sección de Reseñas -->
+    <div class="card shadow-lg">
+      <div class="card-body p-4">
+        <h5 class="card-title mb-4" style="font-weight: bold; color: #333;">Reseñas</h5>
+
+        <!-- Lista de Reseñas -->
+        <div class="reviews-container">
           <!-- Review 1 -->
-          <div class="border-bottom py-2">
-            <p><strong>Usuario 1:</strong> Muy buen servicio, quedé satisfecho con el resultado.</p>
-            <p><small>⭐⭐⭐⭐⭐</small></p>
+          <div class="border-bottom py-3">
+            <p><strong style="color: #333;">Usuario 1:</strong> Muy buen servicio, quedé satisfecho con el resultado.</p>
+            <p><small style="color: #ffc107;">⭐⭐⭐⭐⭐</small></p>
           </div>
           
           <!-- Review 2 -->
-          <div class="border-bottom py-2">
-            <p><strong>Usuario 2:</strong> El profesional fue muy puntual y cumplió con todas las expectativas.</p>
-            <p><small>⭐⭐⭐⭐⭐</small></p>
+          <div class="border-bottom py-3">
+            <p><strong style="color: #333;">Usuario 2:</strong> El profesional fue muy puntual y cumplió con todas las expectativas.</p>
+            <p><small style="color: #ffc107;">⭐⭐⭐⭐⭐</small></p>
           </div>
           
           <!-- Review 3 -->
-          <div class="border-bottom py-2">
-            <p><strong>Usuario 3:</strong> El trabajo fue bueno, aunque hubo algunos detalles que mejorar.</p>
-            <p><small>⭐⭐⭐⭐</small></p>
+          <div class="border-bottom py-3">
+            <p><strong style="color: #333;">Usuario 3:</strong> El trabajo fue bueno, aunque hubo algunos detalles que mejorar.</p>
+            <p><small style="color: #ffc107;">⭐⭐⭐⭐</small></p>
           </div>
           
           <!-- Review 4 -->
-          <div class="border-bottom py-2">
-            <p><strong>Usuario 4:</strong> Excelente trato, muy profesional en todo momento.</p>
-            <p><small>⭐⭐⭐⭐⭐</small></p>
+          <div class="border-bottom py-3">
+            <p><strong style="color: #333;">Usuario 4:</strong> Excelente trato, muy profesional en todo momento.</p>
+            <p><small style="color: #ffc107;">⭐⭐⭐⭐⭐</small></p>
           </div>
           
           <!-- Review 5 -->
-          <div class="py-2">
-            <p><strong>Usuario 5:</strong> Buen servicio, aunque podría ser un poco más rápido.</p>
-            <p><small>⭐⭐⭐⭐</small></p>
+          <div class="py-3">
+            <p><strong style="color: #333;">Usuario 5:</strong> Buen servicio, aunque podría ser un poco más rápido.</p>
+            <p><small style="color: #ffc107;">⭐⭐⭐⭐</small></p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <div class="container my-5">
     <!-- Título Principal -->
@@ -203,184 +215,71 @@
   </div>
 
   <br><br><br>
-  
   <div class="footer_bg">
     <!-- info section -->
-    <section class="info_section layout_padding2-bottom">
-      <div class="container">
-        <h3 >
-          ServiceHub
-        </h3>
+    <section class="info_section py-5">
+      <div class="container text-center">
+        <h3>ServiceHub</h3>
       </div>
-      <div class="container info_content">
-
-        <div>
-          <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Navegacion
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="index.html">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="favorite.html">
-                      Servicios Favortios
-                    </a>
-                  </li>
-                  <li>
-                    <a href="agenda.html">
-                      Servicios Agendados
-                    </a>
-                  </li>
-                  <li>
-                    <a href="contactanos.html">
-                      Contactanos
-                    </a>
-                  </li>
-                  <li>
-                    <a href="login.html">
-                      Iniciar Sesion
-                    </a>
-                  </li>
-                  <li>
-                    <a href="singup.html">
-                      Registrarse
-                    </a>
-                  </li>
-                  <li>
-                    <a href="updateprofile.html">
-                      Cuenta
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages/sign-in-professional.html">
-                      Cuenta Profesionista
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Servicios Populares
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="gardening.html">
-                      Jardinería
-                    </a>
-                  </li>
-                  <li>
-                    <a href="plumb.html">
-                      Plomería
-                    </a>
-                  </li>
-                  <li>
-                    <a href="cleaning.html">
-                      Limpieza de Hogar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="packing.html">
-                      Mudanza
-                    </a>
-                  </li>
-                  <li>
-                    <a href="renovation.html">
-                      Obras y remodelaciones
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Suscripcion Premium
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <p style="color: white;">Promocionamos tu servicio</p>
-                  </li>
-                  <li>
-                    <p style="color: white;">Disfruta de tu navegacion sin anuncios</p>
-                  </li>
-                  <li>
-                    <p style="color: white;">Obtendras recomendaciones personalizadas</p>
-                  </li>
-                  <li>
-                    <p style="color: white;">Te informaremos de las mejores ofertas de servicios</p>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <p style="color: white;">(Profesionista)</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <div class="container info_content mt-4">
+        <div class="row">
+          <!-- Navegacion -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <h5 class="text-center">Navegación</h5>
+            <ul class="list-unstyled text-center">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="favorite.html">Servicios Favoritos</a></li>
+              <li><a href="agenda.html">Servicios Agendados</a></li>
+              <li><a href="contactanos.html">Contáctanos</a></li>
+              <li><a href="login.html">Iniciar Sesión</a></li>
+              <li><a href="singup.html">Registrarse</a></li>
+              <li><a href="updateprofile.html">Cuenta</a></li>
+              <li><a href="pages/sign-in-professional.html">Cuenta Profesionista</a></li>
+            </ul>
+          </div>
+          <!-- Servicios Populares -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <h5 class="text-center">Servicios Populares</h5>
+            <ul class="list-unstyled text-center">
+              <li><a href="gardening.html">Jardinería</a></li>
+              <li><a href="plumb.html">Plomería</a></li>
+              <li><a href="cleaning.html">Limpieza de Hogar</a></li>
+              <li><a href="packing.html">Mudanza</a></li>
+              <li><a href="renovation.html">Obras y Remodelaciones</a></li>
+            </ul>
+          </div>
+          <!-- Suscripción Premium -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <h5 class="text-center">Suscripción Premium</h5>
+            <ul class="list-unstyled text-center text-white">
+              <li>Promocionamos tu servicio</li>
+              <li>Disfruta de navegación sin anuncios</li>
+              <li>Recomendaciones personalizadas</li>
+              <li>Ofertas de servicios exclusivas</li>
+              <li>(Profesionista)</li>
+            </ul>
           </div>
         </div>
-        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
-          <div class="social-box">
-            <a href="#">
-              <img src="images/fb.png" alt=""/>
-            </a>
-
-            <a href="#">
-              <img src="images/twitter.png" alt=""/>
-            </a>
-            <a href="#">
-              <img src="images/linkedin1.png" alt=""/>
-            </a>
-            <a href="#">
-              <img src="images/instagram1.png" alt=""/>
-            </a>
-          </div>
-          <div class="form_container mt-5">
-            <form action="payment.html">
-              <button type="submit">
-                Suscripcion Premium
-              </button>
-            </form>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center">
+          <div class="social-box mb-4 mb-lg-0 text-center">
+            <a href="#"><img src="images/fb.png" alt="Facebook"/></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"/></a>
+            <a href="#"><img src="images/linkedin1.png" alt="LinkedIn"/></a>
+            <a href="#"><img src="images/instagram1.png" alt="Instagram"/></a>
           </div>
         </div>
       </div>
-
     </section>
-
-    <!-- end info_section -->
-
+  
     <!-- footer section -->
-    <section class="container-fluid footer_section">
-      <p>
-        © 2019 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
+    <section class="container-fluid footer_section text-center py-3 bg-dark text-white">
+      <p>© 2019 All Rights Reserved By <a href="https://html.design/" class="text-white">Free Html Templates</a></p>
     </section>
-    <!-- footer section -->
   </div>
-
-  <script>
-      function toggleFavorite(element) {
-          element.classList.toggle('fas');
-          element.classList.toggle('far');
-      }
-  </script>
-
+  
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-</body>
-</html>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  

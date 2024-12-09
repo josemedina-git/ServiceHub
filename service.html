@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> 
+<html>
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -31,9 +31,9 @@
         <div class="row align-items-center">
           <div class="col-lg-8 d-flex align-items-center">
             <img src="images/bannerservicehub.jpeg" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
-            <form class="form-inline my-2 my-lg-0" id="searchForm">
+            <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Buscar servicio" aria-label="Search" id="searchInput">
-              <button class="btn my-2 my-sm-0 nav_search-btn search-icon" type="submit"><i class="fas fa-search"></i></button>
+              <span class="btn my-2 my-sm-0 nav_search-btn search-icon" onclick="performSearch()"><i class="fas fa-search"></i></span>
             </form>
           </div>
         </div>
@@ -56,7 +56,7 @@
                     <a class="nav-link" href="agenda.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i> Contactanos</a>
+                    <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i>Contactanos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
@@ -64,6 +64,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="singup.html"><i class="fas fa-user-plus"></i> Registrarse</a>
                   </li>
+                  
                 </ul>
               </div>
             </nav>
@@ -72,69 +73,109 @@
       </div>
     </header>
   </div>
-
   <script>
-      document.getElementById('searchForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Evita el envío del formulario
+      function performSearch() {
           const query = document.getElementById('searchInput').value;
           if (query) {
               window.location.href = `index.html?search=${encodeURIComponent(query)}`;
           }
-      });
+      }
   </script>
+    <!-- end header section -->
+  </div>
+  <!-- Service Section -->
+<section class="service_section" style="background-color: #f9f9f9; padding: 50px 0;">
+  <div class="container">
+    <!-- Título -->
+    <div class="custom_heading-container text-center mb-5">
+      <h2 style="font-size: 36px; font-weight: bold; color: #333;">Nuestros Servicios</h2>
+    </div>
 
-  <!-- end header section -->
- <!-- service section -->
-<section class="service_section" style="margin-top: 100px; margin-bottom: 250px;">
-  <div class="container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-    
-    <!-- Primer servicio -->
-    <div class="service_profile" style="display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; width: 350px; height: 550px;">
-      <div class="profile-img-box" style="width: 100%; height: 200px; overflow: hidden; border-radius: 15px;">
-        <img src="images/gardener.jpg" alt="Perfil del servicio" style="width: 100%; height: 100%; object-fit: cover;" />
-      </div>
-      <div class="profile-detail-box" style="text-align: center; margin-top: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="flex-grow: 1; overflow: hidden;">
-          <h4 class="service-name" style="color: #333; font-size: 24px; margin-bottom: 10px;">Servicio de Jardinería</h4>
-          <p style="color: #555; font-size: 16px; margin: 5px 0;">
-            <strong>Precio promedio:</strong> <span style="color: #007BFF;">$100 - $200</span>
-          </p>
-          <p style="color: #555; font-size: 16px; margin: 5px 0;">
-            <strong>Trabajos concretados:</strong> <span style="color: #28a745;">45</span>
-          </p>
-          <p style="color: #666; font-size: 14px; margin: 10px 0;">
-            Ofrecemos servicios de jardinería profesional, diseño de paisajismo, poda de árboles y mantenimiento de jardines. Servicios confiables y personalizados para tu hogar.
-          </p>
+    <!-- Contenedor de Servicios -->
+    <div class="row g-4 justify-content-center">
+      <!-- Jardinería -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service_box shadow-lg p-3 mb-4" style="border-radius: 15px; overflow: hidden; background: #fff; cursor: pointer;">
+          <div class="img-box" style="height: 200px; overflow: hidden; border-radius: 10px;">
+            <img src="images/gardening.jpg" alt="Jardinería" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="detail-box text-center mt-3">
+            <h4 style="font-size: 18px; font-weight: bold; color: #007BFF;">Jardinería</h4>
+            <p style="color: #555; font-size: 14px; margin-top: 10px;">
+              Diseño y mantenimiento de jardines. Servicio profesional y personalizado para tu hogar.
+            </p>
+          </div>
         </div>
-        <button style="background: #884cdc; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 14px; cursor: pointer; margin-top: 10px;">
-          <a href="profileservice.html" style="text-decoration: none; color: #fff;">Ver más</a>
-        </button>
+      </div>
+
+      <!-- Plomería -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service_box shadow-lg p-3 mb-4" style="border-radius: 15px; overflow: hidden; background: #fff; cursor: pointer;">
+          <div class="img-box" style="height: 200px; overflow: hidden; border-radius: 10px;">
+            <img src="images/plumb.jpg" alt="Plomería" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="detail-box text-center mt-3">
+            <h4 style="font-size: 18px; font-weight: bold; color: #007BFF;">Plomería</h4>
+            <p style="color: #555; font-size: 14px; margin-top: 10px;">
+              Reparaciones e instalaciones de tuberías con atención profesional y puntual.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Limpieza -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service_box shadow-lg p-3 mb-4" style="border-radius: 15px; overflow: hidden; background: #fff; cursor: pointer;">
+          <div class="img-box" style="height: 200px; overflow: hidden; border-radius: 10px;">
+            <img src="images/clean_home.jpg" alt="Limpieza de hogar" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="detail-box text-center mt-3">
+            <h4 style="font-size: 18px; font-weight: bold; color: #007BFF;">Limpieza de Hogar</h4>
+            <p style="color: #555; font-size: 14px; margin-top: 10px;">
+              Servicio de limpieza profesional para mantener tu hogar impecable.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mudanza -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service_box shadow-lg p-3 mb-4" style="border-radius: 15px; overflow: hidden; background: #fff; cursor: pointer;">
+          <div class="img-box" style="height: 200px; overflow: hidden; border-radius: 10px;">
+            <img src="images/packing.jpg" alt="Mudanza" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="detail-box text-center mt-3">
+            <h4 style="font-size: 18px; font-weight: bold; color: #007BFF;">Mudanza</h4>
+            <p style="color: #555; font-size: 14px; margin-top: 10px;">
+              Servicio de mudanzas seguras y confiables para tu hogar o negocio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Obras y Remodelaciones -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service_box shadow-lg p-3 mb-4" style="border-radius: 15px; overflow: hidden; background: #fff; cursor: pointer;">
+          <div class="img-box" style="height: 200px; overflow: hidden; border-radius: 10px;">
+            <img src="images/renovation.jpg" alt="Obras y Remodelaciones" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="detail-box text-center mt-3">
+            <h4 style="font-size: 18px; font-weight: bold; color: #007BFF;">Obras y Remodelaciones</h4>
+            <p style="color: #555; font-size: 14px; margin-top: 10px;">
+              Construcción y remodelaciones para hogares y negocios con calidad garantizada.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Segundo servicio -->
-    <div class="service_profile" style="display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; width: 350px; height: 550px;">
-      <div class="profile-img-box" style="width: 100%; height: 200px; overflow: hidden; border-radius: 15px;">
-        <img src="images/gardener2.jpg" alt="Perfil del servicio" style="width: 100%; height: 100%; object-fit: cover;" />
-      </div>
-      <div class="profile-detail-box" style="text-align: center; margin-top: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="flex-grow: 1; overflow: hidden;">
-          <h4 class="service-name" style="color: #333; font-size: 24px; margin-bottom: 10px;">Servicio de Jardinería</h4>
-          <p style="color: #555; font-size: 16px; margin: 5px 0;">
-            <strong>Precio promedio:</strong> <span style="color: #007BFF;">$150 - $250</span>
-          </p>
-          <p style="color: #555; font-size: 16px; margin: 5px 0;">
-            <strong>Trabajos concretados:</strong> <span style="color: #28a745;">60</span>
-          </p>
-          <p style="color: #666; font-size: 14px; margin: 10px 0;">
-            Especialistas en paisajismo, poda de árboles y mantenimiento de jardines. Nos adaptamos a tus necesidades.
-          </p>
-        </div>
-        <button style="background: #884cdc; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 14px; cursor: pointer; margin-top: 10px;">
-          <a href="profileservice.html" style="text-decoration: none; color: #fff;">Ver más</a>
-        </button>
-      </div>
-    </div>
+  
+    <!-- Botón Ver Más -->
+<div class="text-center mt-5">
+  <a href="#" class="btn btn-primary" style="background-color: #884cdc; border-color: #ffffff; color: #ffffff; font-size: 18px; padding: 10px 30px; border-radius: 25px;">
+    Ver más
+  </a>
+</div>
 
   </div>
 </section>

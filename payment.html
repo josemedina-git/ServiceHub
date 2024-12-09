@@ -109,243 +109,165 @@
     <!-- end header section -->
   </div>
   <div class="container">
-    <div class="custom_heading-container">
-      <h1 class="h1-sub">
-        Suscripcion Premium
+    <div class="custom_heading-container text-center">
+      <h1 class="h1-sub mb-4" style="font-size: 36px; font-weight: bold; color: #7b00ff;">
+        Suscripción Premium
       </h1>
     </div>
   </div>
+  
   <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2 class="text-center mb-4">$99.99 / mes</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="cardName" class="form-label">Nombre en la tarjeta</label>
-                    <input type="text" class="form-control" id="cardName" placeholder="Nombre completo" required>
-                </div>
-                <div class="mb-3">
-                    <label for="cardNumber" class="form-label">Número de tarjeta</label>
-                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="expiryDate" class="form-label">Fecha de expiración</label>
-                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="cvv" placeholder="123" required>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="billingAddress" class="form-label">Dirección de facturación</label>
-                    <input type="text" class="form-control" id="billingAddress" placeholder="Calle, número, ciudad" required>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="custom-btn" data-bs-toggle="modal" data-bs-target="#successModal">
-                        Realizar Pago
-                    </button>
-                </div>
-            </form>
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+          <h2 class="text-center mb-4" style="font-weight: bold; color: #28a745;">$99.99 / mes</h2>
+          <form id="subscriptionForm">
+            <div class="mb-3">
+              <label for="cardName" class="form-label">Nombre en la tarjeta</label>
+              <input type="text" class="form-control" id="cardName" placeholder="Nombre completo" required>
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Número de tarjeta</label>
+              <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="expiryDate" class="form-label">Fecha de expiración</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="123" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="billingAddress" class="form-label">Dirección de facturación</label>
+              <input type="text" class="form-control" id="billingAddress" placeholder="Calle, número, ciudad" required>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary w-100 py-2" style="font-size: 18px;" id="payButton">
+                Realizar Pago
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
   </div>
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <div class="mb-4">
-                        <i class="success-icon bi bi-check-circle-fill"></i>
-                    </div>
-                    <h5>¡Pago realizado con exito!</h5>
-                    <button type="button" class="btn btn-secondary mt-4" id="closeBtn" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+  
+  <!-- Modal de éxito -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="mb-4">
+            <i class="success-icon bi bi-check-circle-fill" style="font-size: 48px; color: #28a745;"></i>
+          </div>
+          <h5>¡Pago realizado con éxito!</h5>
+          <button type="button" class="btn btn-secondary mt-4" id="closeBtn" data-bs-dismiss="modal">Cerrar</button>
         </div>
+      </div>
     </div>
+  </div>
+  
+  <script>
+    document.getElementById("payButton").addEventListener("click", function () {
+      const fields = [
+        { id: "cardName", name: "Nombre en la tarjeta" },
+        { id: "cardNumber", name: "Número de tarjeta" },
+        { id: "expiryDate", name: "Fecha de expiración" },
+        { id: "cvv", name: "CVV" },
+        { id: "billingAddress", name: "Dirección de facturación" }
+      ];
+  
+      let missingFields = [];
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        if (!input.value.trim()) {
+          missingFields.push(field.name);
+        }
+      });
+  
+      if (missingFields.length > 0) {
+        alert("Por favor llena los siguientes campos: \n" + missingFields.join("\n"));
+      } else {
+        // Mostrar modal de éxito
+        const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        successModal.show();
+      }
+    });
+  </script>
+  
+  <br>
+  <br>
+  <br>
   <br>
   <br>
   <div class="footer_bg">
     <!-- info section -->
-    <section class="info_section layout_padding2-bottom">
-      <div class="container">
-        <h3 >
-          ServiceHub
-        </h3>
+    <section class="info_section py-5">
+      <div class="container text-center">
+        <h3>ServiceHub</h3>
       </div>
-      <div class="container info_content">
-
-        <div>
-          <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Navegacion
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="index.html">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="favorite.html">
-                      Servicios Favortios
-                    </a>
-                  </li>
-                  <li>
-                    <a href="agenda.html">
-                      Servicios Agendados
-                    </a>
-                  </li>
-                  <li>
-                    <a href="contactanos.html">
-                      Contactanos
-                    </a>
-                  </li>
-                  <li>
-                    <a href="login.html">
-                      Iniciar Sesion
-                    </a>
-                  </li>
-                  <li>
-                    <a href="singup.html">
-                      Registrarse
-                    </a>
-                  </li>
-                  <li>
-                    <a href="updateprofile.html">
-                      Cuenta
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages/sign-in-professional.html">
-                      Cuenta Profesionista
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Servicios Populares
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="gardening.html">
-                      Jardinería
-                    </a>
-                  </li>
-                  <li>
-                    <a href="plumb.html">
-                      Plomería
-                    </a>
-                  </li>
-                  <li>
-                    <a href="cleaning.html">
-                      Limpieza de Hogar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="packing.html">
-                      Mudanza
-                    </a>
-                  </li>
-                  <li>
-                    <a href="renovation.html">
-                      Obras y remodelaciones
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="d-flex">
-                <h5>
-                  Suscripcion Premium
-                </h5>
-              </div>
-              <div class="d-flex ">
-                <ul>
-                  <li>
-                    <p style="color: white;">Promocionamos tu servicio</p>
-                  </li>
-                  <li>
-                    <p style="color: white;">Disfruta de tu navegacion sin anuncios</p>
-                  </li>
-                  <li>
-                    <p style="color: white;">Obtendras recomendaciones personalizadas</p>
-                  </li>
-                  <li>
-                    <p style="color: white;">Te informaremos de las mejores ofertas de servicios</p>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <p style="color: white;">(Profesionista)</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <div class="container info_content mt-4">
+        <div class="row">
+          <!-- Navegacion -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <h5 class="text-center">Navegación</h5>
+            <ul class="list-unstyled text-center">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="favorite.html">Servicios Favoritos</a></li>
+              <li><a href="agenda.html">Servicios Agendados</a></li>
+              <li><a href="contactanos.html">Contáctanos</a></li>
+              <li><a href="login.html">Iniciar Sesión</a></li>
+              <li><a href="singup.html">Registrarse</a></li>
+              <li><a href="updateprofile.html">Cuenta</a></li>
+              <li><a href="pages/sign-in-professional.html">Cuenta Profesionista</a></li>
+            </ul>
+          </div>
+          <!-- Servicios Populares -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <h5 class="text-center">Servicios Populares</h5>
+            <ul class="list-unstyled text-center">
+              <li><a href="gardening.html">Jardinería</a></li>
+              <li><a href="plumb.html">Plomería</a></li>
+              <li><a href="cleaning.html">Limpieza de Hogar</a></li>
+              <li><a href="packing.html">Mudanza</a></li>
+              <li><a href="renovation.html">Obras y Remodelaciones</a></li>
+            </ul>
+          </div>
+          <!-- Suscripción Premium -->
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <h5 class="text-center">Suscripción Premium</h5>
+            <ul class="list-unstyled text-center text-white">
+              <li>Promocionamos tu servicio</li>
+              <li>Disfruta de navegación sin anuncios</li>
+              <li>Recomendaciones personalizadas</li>
+              <li>Ofertas de servicios exclusivas</li>
+              <li>(Profesionista)</li>
+            </ul>
           </div>
         </div>
-        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
-          <div class="social-box">
-            <a href="#">
-              <img src="images/fb.png" alt=""/>
-            </a>
-
-            <a href="#">
-              <img src="images/twitter.png" alt=""/>
-            </a>
-            <a href="#">
-              <img src="images/linkedin1.png" alt=""/>
-            </a>
-            <a href="#">
-              <img src="images/instagram1.png" alt=""/>
-            </a>
-          </div>
-          <div class="form_container mt-5">
-            <form action="payment.html">
-              <button type="submit">
-                Suscripcion Premium
-              </button>
-            </form>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center">
+          <div class="social-box mb-4 mb-lg-0 text-center">
+            <a href="#"><img src="images/fb.png" alt="Facebook"/></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"/></a>
+            <a href="#"><img src="images/linkedin1.png" alt="LinkedIn"/></a>
+            <a href="#"><img src="images/instagram1.png" alt="Instagram"/></a>
           </div>
         </div>
       </div>
-
     </section>
-
-    <!-- end info_section -->
-
+  
     <!-- footer section -->
-    <section class="container-fluid footer_section">
-      <p>
-        © 2019 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
+    <section class="container-fluid footer_section text-center py-3 bg-dark text-white">
+      <p>© 2019 All Rights Reserved By <a href="https://html.design/" class="text-white">Free Html Templates</a></p>
     </section>
-    <!-- footer section -->
   </div>
+  
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <script>
-    // Redirigir al index cuando se cierra el modal
-    document.getElementById('closeBtn').addEventListener('click', function () {
-        // Redirigir al index.html después de cerrar el modal
-        window.location.href = 'index.html';
-    });
-    </script>
-
-</body>
-</html>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  

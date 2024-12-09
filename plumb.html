@@ -85,221 +85,124 @@
   </div>
 <!-- service section -->
 <section class="service_section" style="margin-top: 100px; margin-bottom: 250px;">
-  <div class="container">
-
-    <div class="service_profile">
-      <div class="profile-img-box">
-        <img src="images/plumber1.jpg" alt="Perfil del servicio"/>
+  <div class="container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+    
+    <!-- Primer servicio -->
+    <div class="service_profile" style="display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; width: 350px; height: 550px;">
+      <div class="profile-img-box" style="width: 100%; height: 200px; overflow: hidden; border-radius: 15px;">
+        <img src="images/plumber1.jpg" alt="Perfil del servicio" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
-      <div class="profile-detail-box">
-        <h4 class="service-name">Servicio de Plomería</h4>
-        <p class="average-price">
-          Precio promedio: <strong>$100 - $200</strong>
-        </p>
-        <p class="completed-jobs">
-          Trabajos concretados: <strong>45</strong>
-        </p>
-        <p class="service-description">
-          Ofrecemos servicios de jardinería profesional, diseño de paisajismo, poda de árboles y mantenimiento de jardines. Servicios confiables y personalizados para tu hogar.
-        </p>
-        <button class="view-more-btn" data-target="contact-info-1" style="margin-bottom: 30px;"><a title="Agendar" style="text-decoration: none; color: #fff;" href="profileservice.html">Ver mas</a></button>
+      <div class="profile-detail-box" style="text-align: center; margin-top: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="flex-grow: 1; overflow: hidden;">
+          <h4 class="service-name" style="color: #333; font-size: 24px; margin-bottom: 10px;">Servicio de Plomería</h4>
+          <p style="color: #555; font-size: 16px; margin: 5px 0;">
+            <strong>Precio promedio:</strong> <span style="color: #007BFF;">$100 - $200</span>
+          </p>
+          <p style="color: #555; font-size: 16px; margin: 5px 0;">
+            <strong>Trabajos concretados:</strong> <span style="color: #28a745;">45</span>
+          </p>
+          <p style="color: #666; font-size: 14px; margin: 10px 0;">
+            Ofrecemos servicios de plomería profesional, reparación de fugas, instalación de tuberías y mantenimiento preventivo. Servicios confiables y personalizados.
+          </p>
+        </div>
+        <button style="background: #884cdc; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 14px; cursor: pointer; margin-top: 10px;">
+          <a href="profileservice.html" style="text-decoration: none; color: #fff;">Ver más</a>
+        </button>
+      </div>
+    </div>
+
+    <!-- Segundo servicio -->
+    <div class="service_profile" style="display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; width: 350px; height: 550px;">
+      <div class="profile-img-box" style="width: 100%; height: 200px; overflow: hidden; border-radius: 15px;">
+        <img src="images/plumber2.jpg" alt="Perfil del servicio" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+      <div class="profile-detail-box" style="text-align: center; margin-top: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="flex-grow: 1; overflow: hidden;">
+          <h4 class="service-name" style="color: #333; font-size: 24px; margin-bottom: 10px;">Servicio de Plomería</h4>
+          <p style="color: #555; font-size: 16px; margin: 5px 0;">
+            <strong>Precio promedio:</strong> <span style="color: #007BFF;">$150 - $250</span>
+          </p>
+          <p style="color: #555; font-size: 16px; margin: 5px 0;">
+            <strong>Trabajos concretados:</strong> <span style="color: #28a745;">60</span>
+          </p>
+          <p style="color: #666; font-size: 14px; margin: 10px 0;">
+            Especialistas en instalación de griferías, reparación de calentadores y mantenimiento de sistemas de agua. Adaptados a tus necesidades.
+          </p>
+        </div>
+        <button style="background: #884cdc; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 14px; cursor: pointer; margin-top: 10px;">
+          <a href="profileservice.html" style="text-decoration: none; color: #fff;">Ver más</a>
+        </button>
       </div>
     </div>
 
-    <div class="service_profile">
-      <div class="profile-img-box">
-        <img src="images/plumber2.jpg" alt="Perfil del servicio"/>
-      </div>
-      <div class="profile-detail-box">
-        <h4 class="service-name">Servicio de Plomería</h4>
-        <p class="average-price">
-          Precio promedio: <strong>$150 - $250</strong>
-        </p>
-        <p class="completed-jobs">
-          Trabajos concretados: <strong>60</strong>
-        </p>
-        <p class="service-description">
-          Especialistas en paisajismo, poda de árboles y mantenimiento de jardines. Nos adaptamos a tus necesidades.
-        </p>
-        <button class="view-more-btn" data-target="contact-info-2" style="margin-bottom: 30px;"><a title="Agendar" style="text-decoration: none; color: #fff;" href="profileservice.html">Ver mas</a></button>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- end service section -->
 
 <div class="footer_bg">
   <!-- info section -->
-  <section class="info_section layout_padding2-bottom">
-    <div class="container">
-      <h3 >
-        ServiceHub
-      </h3>
+  <section class="info_section py-5">
+    <div class="container text-center">
+      <h3>ServiceHub</h3>
     </div>
-    <div class="container info_content">
-
-      <div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex">
-              <h5>
-                Navegacion
-              </h5>
-            </div>
-            <div class="d-flex ">
-              <ul>
-                <li>
-                  <a href="index.html">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="favorite.html">
-                    Servicios Favortios
-                  </a>
-                </li>
-                <li>
-                  <a href="agenda.html">
-                    Servicios Agendados
-                  </a>
-                </li>
-                <li>
-                  <a href="contactanos.html">
-                    Contactanos
-                  </a>
-                </li>
-                <li>
-                  <a href="login.html">
-                    Iniciar Sesion
-                  </a>
-                </li>
-                <li>
-                  <a href="singup.html">
-                    Registrarse
-                  </a>
-                </li>
-                <li>
-                  <a href="updateprofile.html">
-                    Cuenta
-                  </a>
-                </li>
-                <li>
-                  <a href="pages/sign-in-professional.html">
-                    Cuenta Profesionista
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex">
-              <h5>
-                Servicios Populares
-              </h5>
-            </div>
-            <div class="d-flex ">
-              <ul>
-                <li>
-                  <a href="gardening.html">
-                    Jardinería
-                  </a>
-                </li>
-                <li>
-                  <a href="plumb.html">
-                    Plomería
-                  </a>
-                </li>
-                <li>
-                  <a href="cleaning.html">
-                    Limpieza de Hogar
-                  </a>
-                </li>
-                <li>
-                  <a href="packing.html">
-                    Mudanza
-                  </a>
-                </li>
-                <li>
-                  <a href="renovation.html">
-                    Obras y remodelaciones
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex">
-              <h5>
-                Suscripcion Premium
-              </h5>
-            </div>
-            <div class="d-flex ">
-              <ul>
-                <li>
-                  <p style="color: white;">Promocionamos tu servicio</p>
-                </li>
-                <li>
-                  <p style="color: white;">Disfruta de tu navegacion sin anuncios</p>
-                </li>
-                <li>
-                  <p style="color: white;">Obtendras recomendaciones personalizadas</p>
-                </li>
-                <li>
-                  <p style="color: white;">Te informaremos de las mejores ofertas de servicios</p>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <p style="color: white;">(Profesionista)</p>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <div class="container info_content mt-4">
+      <div class="row">
+        <!-- Navegacion -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <h5 class="text-center">Navegación</h5>
+          <ul class="list-unstyled text-center">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="favorite.html">Servicios Favoritos</a></li>
+            <li><a href="agenda.html">Servicios Agendados</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="singup.html">Registrarse</a></li>
+            <li><a href="updateprofile.html">Cuenta</a></li>
+            <li><a href="pages/sign-in-professional.html">Cuenta Profesionista</a></li>
+          </ul>
+        </div>
+        <!-- Servicios Populares -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <h5 class="text-center">Servicios Populares</h5>
+          <ul class="list-unstyled text-center">
+            <li><a href="gardening.html">Jardinería</a></li>
+            <li><a href="plumb.html">Plomería</a></li>
+            <li><a href="cleaning.html">Limpieza de Hogar</a></li>
+            <li><a href="packing.html">Mudanza</a></li>
+            <li><a href="renovation.html">Obras y Remodelaciones</a></li>
+          </ul>
+        </div>
+        <!-- Suscripción Premium -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <h5 class="text-center">Suscripción Premium</h5>
+          <ul class="list-unstyled text-center text-white">
+            <li>Promocionamos tu servicio</li>
+            <li>Disfruta de navegación sin anuncios</li>
+            <li>Recomendaciones personalizadas</li>
+            <li>Ofertas de servicios exclusivas</li>
+            <li>(Profesionista)</li>
+          </ul>
         </div>
       </div>
-      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
-        <div class="social-box">
-          <a href="#">
-            <img src="images/fb.png" alt=""/>
-          </a>
-
-          <a href="#">
-            <img src="images/twitter.png" alt=""/>
-          </a>
-          <a href="#">
-            <img src="images/linkedin1.png" alt=""/>
-          </a>
-          <a href="#">
-            <img src="images/instagram1.png" alt=""/>
-          </a>
-        </div>
-        <div class="form_container mt-5">
-          <form action="payment.html">
-            <button type="submit">
-              Suscripcion Premium
-            </button>
-          </form>
+      <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center">
+        <div class="social-box mb-4 mb-lg-0 text-center">
+          <a href="#"><img src="images/fb.png" alt="Facebook"/></a>
+          <a href="#"><img src="images/twitter.png" alt="Twitter"/></a>
+          <a href="#"><img src="images/linkedin1.png" alt="LinkedIn"/></a>
+          <a href="#"><img src="images/instagram1.png" alt="Instagram"/></a>
         </div>
       </div>
     </div>
-
   </section>
 
-  <!-- end info_section -->
-
   <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      © 2019 All Rights Reserved By
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
+  <section class="container-fluid footer_section text-center py-3 bg-dark text-white">
+    <p>© 2019 All Rights Reserved By <a href="https://html.design/" class="text-white">Free Html Templates</a></p>
   </section>
-  <!-- footer section -->
 </div>
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body></html>
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

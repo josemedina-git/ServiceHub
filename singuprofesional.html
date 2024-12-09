@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="css/styleform.css" rel="stylesheet" />
+    <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <title>ServiceHub</title>
+  <link rel="icon" type="image/png" href="images/icono.ico">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .search-icon {
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="hero_area">
+        <header class="header_section">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-lg-8 d-flex align-items-center">
+                <img src="images/bannerservicehub.jpeg" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Buscar servicio" aria-label="Search" id="searchInput">
+                  <span class="btn my-2 my-sm-0 nav_search-btn search-icon" onclick="performSearch()"><i class="fas fa-search"></i></span>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="favorite.html"><i class="fas fa-heart"></i> Servicios Favoritos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="agenda.html"><i class="fas fa-receipt"></i> Servicios Agendados</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contactanos.html"><i class="fas fa-cogs"></i>Contactanos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="singup.html"><i class="fas fa-user-plus"></i> Registrarse</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <script>
+          function performSearch() {
+              const query = document.getElementById('searchInput').value;
+              if (query) {
+                  window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+              }
+          }
+      </script>
+        <!-- end header section -->
+      </div>
+        <br>
+        <section class="gradient-custom d-flex align-items-center justify-content-center" style="background: linear-gradient(to bottom right, #6a11cb, #2575fc); padding: 0;">
+          <div class="container" style="margin-top: 50px;">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-lg-8 col-xl-7">
+                <div class="card shadow-lg p-4" style="border-radius: 15px; background-color: #fff;">
+                  <h3 class="text-center fw-bold mb-4" style="color: #6a11cb;">Registro Profesionista</h3>
+                  <form id="registrationForm">
+                    <!-- Nombre y Apellido -->
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-user"></i>
+                          </span>
+                          <input type="text" id="name" class="form-control" placeholder="Nombre" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-user"></i>
+                          </span>
+                          <input type="text" id="surname" class="form-control" placeholder="Apellido" required>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <!-- Correo y Teléfono -->
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                          <input type="email" id="email" class="form-control" placeholder="Correo Electrónico" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-phone"></i>
+                          </span>
+                          <input type="tel" id="phone" class="form-control" placeholder="Teléfono" required>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <!-- CURP y RFC -->
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-id-card"></i>
+                          </span>
+                          <input type="text" id="curp" class="form-control" placeholder="CURP" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-id-badge"></i>
+                          </span>
+                          <input type="text" id="rfc" class="form-control" placeholder="RFC" required>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <!-- Profesión -->
+                    <div class="mb-3">
+                      <div class="input-group">
+                        <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                          <i class="fas fa-briefcase"></i>
+                        </span>
+                        <input type="text" id="profession" class="form-control" placeholder="Profesión" required>
+                      </div>
+                    </div>
+        
+                    <!-- Contraseña y Confirmación -->
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <span class="input-group-text" style="background-color: #6a11cb; color: #fff;">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmar Contraseña" required>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <!-- Términos y Condiciones -->
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                      <label class="form-check-label" for="terms">
+                        Acepto los <a href="#!" style="color: #6a11cb;">Términos y Condiciones</a>
+                      </label>
+                    </div>
+        
+                    <!-- Botón -->
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary" style="background-color: #6a11cb; border: none;">Crear Cuenta</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          </div>
+      <br><br>
+      <div class="footer_bg">
+        <!-- info section -->
+        <section class="info_section py-5">
+          <div class="container text-center">
+            <h3>ServiceHub</h3>
+          </div>
+          <div class="container info_content mt-4">
+            <div class="row">
+              <!-- Navegacion -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <h5 class="text-center">Navegación</h5>
+                <ul class="list-unstyled text-center">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="favorite.html">Servicios Favoritos</a></li>
+                  <li><a href="agenda.html">Servicios Agendados</a></li>
+                  <li><a href="contactanos.html">Contáctanos</a></li>
+                  <li><a href="login.html">Iniciar Sesión</a></li>
+                  <li><a href="singup.html">Registrarse</a></li>
+                  <li><a href="updateprofile.html">Cuenta</a></li>
+                  <li><a href="pages/sign-in-professional.html">Cuenta Profesionista</a></li>
+                </ul>
+              </div>
+              <!-- Servicios Populares -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <h5 class="text-center">Servicios Populares</h5>
+                <ul class="list-unstyled text-center">
+                  <li><a href="gardening.html">Jardinería</a></li>
+                  <li><a href="plumb.html">Plomería</a></li>
+                  <li><a href="cleaning.html">Limpieza de Hogar</a></li>
+                  <li><a href="packing.html">Mudanza</a></li>
+                  <li><a href="renovation.html">Obras y Remodelaciones</a></li>
+                </ul>
+              </div>
+              <!-- Suscripción Premium -->
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <h5 class="text-center">Suscripción Premium</h5>
+                <ul class="list-unstyled text-center text-white">
+                  <li>Promocionamos tu servicio</li>
+                  <li>Disfruta de navegación sin anuncios</li>
+                  <li>Recomendaciones personalizadas</li>
+                  <li>Ofertas de servicios exclusivas</li>
+                  <li>(Profesionista)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center">
+              <div class="social-box mb-4 mb-lg-0 text-center">
+                <a href="#"><img src="images/fb.png" alt="Facebook"/></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"/></a>
+                <a href="#"><img src="images/linkedin1.png" alt="LinkedIn"/></a>
+                <a href="#"><img src="images/instagram1.png" alt="Instagram"/></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- footer section -->
+        <section class="container-fluid footer_section text-center py-3 bg-dark text-white">
+          <p>© 2019 All Rights Reserved By <a href="https://html.design/" class="text-white">Free Html Templates</a></p>
+        </section>
+      </div>
+      
+      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      
