@@ -1,0 +1,184 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <title>ServiceHub</title>
+  <link rel="icon" type="image/png" href="images/icono.ico">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .search-icon {
+      color: white;
+      cursor: pointer;
+    }
+        .custom-btn {
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #feb543;
+            color: #f9fcfb;
+            border-radius: 25px;
+            -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
+            box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            border: none;
+            margin-top: 45px;
+        }
+        .custom-btn:hover {
+            background-color: #f4a12b;
+        }
+        .success-icon {
+            font-size: 50px;
+            color: #28a745;
+        }
+        .h1-sub {
+            text-align: center;
+            color: #383a90;
+            margin-top: 55px;
+        }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28ZLTLFBL4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-28ZLTLFBL4');
+</script>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+    @include('layouts.navbar')
+    </header>
+  </div>
+  <script>
+      function performSearch() {
+          const query = document.getElementById('searchInput').value;
+          if (query) {
+              window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+          }
+      }
+  </script>
+    <!-- end header section -->
+  </div>
+  <div class="container">
+    <div class="custom_heading-container text-center">
+      <h1 class="h1-sub mb-4" style="font-size: 36px; font-weight: bold; color: #7b00ff;">
+        Suscripción Premium
+      </h1>
+    </div>
+  </div>
+  
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+          <h2 class="text-center mb-4" style="font-weight: bold; color: #28a745;">$99.99 / mes</h2>
+          <form id="subscriptionForm">
+            <div class="mb-3">
+              <label for="cardName" class="form-label">Nombre en la tarjeta</label>
+              <input type="text" class="form-control" id="cardName" placeholder="Nombre completo" required>
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Número de tarjeta</label>
+              <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="expiryDate" class="form-label">Fecha de expiración</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="123" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="billingAddress" class="form-label">Dirección de facturación</label>
+              <input type="text" class="form-control" id="billingAddress" placeholder="Calle, número, ciudad" required>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary w-100 py-2" style="font-size: 18px;" id="payButton">
+                Realizar Pago
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de éxito -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="mb-4">
+            <i class="success-icon bi bi-check-circle-fill" style="font-size: 48px; color: #28a745;"></i>
+          </div>
+          <h5>¡Pago realizado con éxito!</h5>
+          <button type="button" class="btn btn-secondary mt-4" id="closeBtn" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById("payButton").addEventListener("click", function () {
+      const fields = [
+        { id: "cardName", name: "Nombre en la tarjeta" },
+        { id: "cardNumber", name: "Número de tarjeta" },
+        { id: "expiryDate", name: "Fecha de expiración" },
+        { id: "cvv", name: "CVV" },
+        { id: "billingAddress", name: "Dirección de facturación" }
+      ];
+  
+      let missingFields = [];
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        if (!input.value.trim()) {
+          missingFields.push(field.name);
+        }
+      });
+  
+      if (missingFields.length > 0) {
+        alert("Por favor llena los siguientes campos: \n" + missingFields.join("\n"));
+      } else {
+        // Mostrar modal de éxito
+        const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        successModal.show();
+      }
+    });
+  </script>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="footer_bg">
+    <!-- info section -->
+    <section class="info_section py-5">
+    @include('layouts.footer')
+    </section>
+    <!-- footer section -->
+  </div>
+  
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
