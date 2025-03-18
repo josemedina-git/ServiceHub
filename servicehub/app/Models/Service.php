@@ -20,4 +20,6 @@ class Service extends Model
         return $this->belongsToMany(Category::class, 'service_category', 'IdService', 'IdCategory');
     }
 
+    
+
 }

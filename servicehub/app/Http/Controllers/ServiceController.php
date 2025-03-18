@@ -13,4 +13,5 @@ class ServiceController extends Controller
         return view('index', compact('services'));
     }
     
+    
 }

@@ -45,10 +45,10 @@
             </div>
             <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center">
                 <div class="social-box mb-4 mb-lg-0 text-center">
-                    <a href="#"><img src="images/fb.png" alt="Facebook" /></a>
-                    <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
-                    <a href="#"><img src="images/linkedin1.png" alt="LinkedIn" /></a>
-                    <a href="#"><img src="images/instagram1.png" alt="Instagram" /></a>
+                    <a href="#"><img src="{{ asset('images/fb.png') }}" alt="Facebook" /></a>
+                    <a href="#"><img src="{{ asset('images/twitter.png') }}" alt="Twitter" /></a>
+                    <a href="#"><img src="{{ asset('images/linkedin1.png') }}" alt="LinkedIn" /></a>
+                    <a href="#"><img src="{{ asset('images/instagram1.png') }}" alt="Instagram" /></a>
                 </div>
             </div>
         </div>

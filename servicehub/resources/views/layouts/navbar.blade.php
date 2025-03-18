@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <div class="row align-items-center">
         <div class="col-lg-8 d-flex align-items-center">
-            <img src="images/bannerservicehub.jpeg" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
-            <form class="form-inline my-2 my-lg-0">
+        <img src="{{ asset('images/bannerservicehub.jpeg') }}" alt="ServiceHub" style="height: 50px; margin-right: 20px;">
+        <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar servicio" aria-label="Search" id="searchInput">
                 <span class="btn my-2 my-sm-0 nav_search-btn search-icon" onclick="performSearch()"><i class="fas fa-search"></i></span>
             </form>
