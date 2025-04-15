@@ -17,14 +17,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
+                        @guest
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ url('/') }}"> <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('favoritos') }}"> <i class="fas fa-heart"></i> Servicios Favoritos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('agenda') }}"> <i class=" fas fa-receipt"></i> Servicios Agendados</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contactanos') }}"> <i class=" fas fa-cogs"></i>Contactanos</a>
@@ -35,7 +30,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('singup') }}"> <i class=" fas fa-user-plus"></i> Registrarse</a>
                         </li>
+                        @endguest
                         @auth
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ url('/') }}"> <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contactanos') }}"> <i class=" fas fa-cogs"></i>Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('favoritos') }}"> <i class="fas fa-heart"></i> Servicios Favoritos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('agenda') }}"> <i class=" fas fa-receipt"></i> Servicios Agendados</a>
+                        </li>
                         <li class="nav-link">
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

@@ -29,4 +29,9 @@ class Client extends Authenticatable
     {
         return $this->Password;
     }
+
+    public function agendas()
+    {
+        return $this->hasMany(Agenda::class, 'IdClient');
+    }
 }

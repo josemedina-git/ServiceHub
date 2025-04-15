@@ -105,30 +105,17 @@
     <div class="container">
       <h2 class="text-center" style="font-weight: bold; margin-bottom: 50px;">Servicios Agendados</h2>
       <ul class="service-list">
-        <li>
-          <a href="agendar.html" class="agenda-title">Jardinería</a>
-          <p class="agenda-status">Pendiente</p>
-          <p class="agenda-content">| 10/10/2024 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repellendus vero fuga repellat distinctio minima vel quos nulla hic! Cum reiciendis deleniti iste saepe, eligendi minima soluta sequi quos molestias!</p>
-          <button class="delete-btn">Eliminar</button>
-        </li>
-        <li>
-          <a href="agendar.html" class="agenda-title">Plomería</a>
-          <p class="agenda-status">Completado</p>
-          <p class="agenda-content">| 15/10/2024 - Servicio de plomería Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint, porro dolore quibusdam delectus et magnam incidunt ut facere, possimus soluta eius optio eaque quos, libero perferendis expedita labore consectetur?</p>
-          <button class="delete-btn">Eliminar</button>
-        </li>
-        <li>
-          <a href="agendar.html" class="agenda-title">Limpieza</a>
-          <p class="agenda-status">Pendiente</p>
-          <p class="agenda-content">| 20/10/2024 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo libero cumque dolor corrupti impedit adipisci laboriosam, sunt cum doloremque doloribus. Officiis porro temporibus, aperiam ut minima voluptates dolore voluptatibus facilis!</p>
-          <button class="delete-btn">Eliminar</button>
-        </li>
-        <li>
-          <a href="agendar.html" class="agenda-title">Remodelaciones</a>
-          <p class="agenda-status">Cancelado</p>
-          <p class="agenda-content">| 25/10/2024 - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores impedit possimus pariatur eius voluptates dicta, ipsa nostrum modi culpa voluptatum ullam nihil omnis. Tempore maxime ullam maiores error. Similique, corporis.</p>
-          <button class="delete-btn">Eliminar</button>
-        </li>
+          @forelse ($agendas as $agenda)
+          <li>
+            <a href="#" class="agenda-title">{{ $agenda->service->NameService }}</a>
+            <p class="agenda-status">{{ $agenda->AgendaStatus }}</p>
+            <p class="agenda-content">| {{ \Carbon\Carbon::parse($agenda->DateAgenda)->format('d/m/Y') }} - {{ $agenda->service->Description }}</p>
+          </li>
+        @empty
+          <li>
+            <p>No tienes servicios agendados.</p>
+          </li>
+        @endforelse
       </ul>
     </div>
   </section>

@@ -33,7 +33,7 @@ class AuthController extends Controller
         }
 
         Auth::login($client);
-        return redirect()->route('dashboard'); // Cambia a la ruta de tu panel principal
+        return redirect()->route('favorite'); // Cambia a la ruta de tu panel principal
     }
 
     public function register(Request $request)
@@ -55,7 +55,7 @@ class AuthController extends Controller
         ]);
 
         Auth::login($client);
-        return redirect()->route('dashboard');
+        return redirect()->route('favorite');
     }
 
     public function logout()

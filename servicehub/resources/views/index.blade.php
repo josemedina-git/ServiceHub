@@ -99,34 +99,28 @@
   </section>
 
   <div class="container my-5">
-    <!-- Título Principal -->
-    <h2 class="text-center mb-5" style="font-weight: bold;">Servicios</h2>
+      <h2 class="text-center mb-5" style="font-weight: bold;">Servicios</h2>
 
-    <!-- Contenedor de las Cards -->
-    @if($category->isNotEmpty())
-    <div class="row">
-      @foreach ($category as $cat)
+      @if($categories->isNotEmpty())
+      <div class="row">
+      @foreach ($categories as $category)
       <div class="col-md-4 mb-4">
-        <div class="card card-custom-bg" style="background-color: #884cdc; color: #fff;">
-          <div class="card-body">
-            <h5 class="card-title text-center">
-              <a title="{{ $cat->NameCategory }}"
-                style="text-decoration: none; color: #fff;"
-                href="{{ route('categories.services', $cat->IdCategory) }}">
-                {{ $cat->NameCategory }}
-              </a>
-            </h5>
+          <div class="card card-custom-bg" style="background-color: #884cdc; color: #fff;">
+              <div class="card-body">
+                  <h5 class="card-title text-center">
+                      <a href="{{ route('categories.services', $category->IdCategory) }}" 
+                        style="text-decoration: none; color: #fff;">
+                          {{ $category->NameCategory }}
+                      </a>
+                  </h5>
+              </div>
           </div>
-        </div>
       </div>
       @endforeach
-    </div>
-    @else
-    <p>No hay categorías disponibles.</p>
-    @endif
-
-
-
+      </div>
+      @else
+      <p>No hay categorías disponibles.</p>
+      @endif
   </div>
 
   <!-- end welcome section -->

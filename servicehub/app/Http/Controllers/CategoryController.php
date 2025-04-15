@@ -9,16 +9,15 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $category = Category::all(); // Obtener todos los registros
-        return view('index', compact('category'));
+        $categories = Category::all(); // Cambié el nombre a plural para mejor semántica
+        return view('index', compact('categories'));
     }
 
-
-    public function showServices($id)
+    public function showServices($IdCategory)
     {
         $category = Category::with([
             'services.professionalServices.professional'
-        ])->findOrFail($id);
+        ])->where('IdCategory', $IdCategory)->firstOrFail();
 
         return view('services', compact('category'));
     }

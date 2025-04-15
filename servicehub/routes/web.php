@@ -6,8 +6,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ServiceController;
+use App\Http\Controllers\AgendaController;
 use App\Models\Category;
 
+Route::get('/agendar/{service}', [AgendaController::class, 'create'])->name('agenda.create');
+Route::post('/agendar', [AgendaController::class, 'store'])->name('agenda.store');
+
+Route::get('/categories/{IdCategory}/services', [CategoryController::class, 'showServices'])->name('categories.services');
+
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda');
 
 Route::get('/', function () {
     return view('index');
@@ -16,11 +24,6 @@ Route::get('/', function () {
 Route::get('/favoritos', function () {
     return view('favorite');
 })->name('favoritos');
-
-
-Route::get('/agenda', function () {
-    return view('agenda');
-})->name('agenda');
 
 Route::get('/contactanos', function () {
     return view('contactanos');
@@ -77,6 +80,10 @@ Route::post('/signup', [AuthController::class, 'register']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/favorite', function () {
+    return view('favorite');
+})->middleware('auth')->name('favorite');
+
 Route::get('/dashboard', function () {
     return view('index');
 })->middleware('auth')->name('dashboard');
@@ -128,11 +135,12 @@ Route::get('/serviceCategory', action: function () {
     return view('pages.profesionalTables.serviceCategoryForm');
 })->name('serviceCategory');
 
-
-
-
 //cargar datos
 Route::get('/', [CategoryController::class, 'index'])->name('home');
 
 Route::get('/categories/{IdCategory}/services', [CategoryController::class, 'showServices'])
     ->name('categories.services');
+
+//Agregar servicio panel profesional
+Route::get('/agregar-servicio', [ServiceController::class, 'create'])->name('services.create');
+Route::post('/guardar-servicio', [ServiceController::class, 'store'])->name('services.store');

@@ -10,7 +10,7 @@ class Service extends Model
     use HasFactory;
 
     protected $table = 'services';
-    protected $primaryKey = 'IdService'; // Asegúrate de que coincide con tu migración
+    protected $primaryKey = 'IdService';
     public $timestamps = true;
 
     protected $fillable = ['NameService', 'Description'];
@@ -20,6 +20,8 @@ class Service extends Model
         return $this->belongsToMany(Category::class, 'service_category', 'IdService', 'IdCategory');
     }
 
-    
-
+    public function professionalServices()
+    {
+        return $this->hasMany(ProfessionalService::class, 'IdService');
+    }
 }

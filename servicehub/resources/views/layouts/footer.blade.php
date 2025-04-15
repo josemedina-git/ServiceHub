@@ -10,14 +10,21 @@
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <h5 class="text-center">Navegación</h5>
                     <ul class="list-unstyled text-center">
+                        @guest
                         <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ route('favoritos') }}">Servicios Favoritos</a></li>
-                        <li><a href="{{ route('agenda') }}">Servicios Agendados</a></li>
                         <li><a href="{{ route('contactanos') }}">Contáctanos</a></li>
                         <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
                         <li><a href="{{ route('singup') }}">Registrarse</a></li>
+                        <li><a href="{{ route('sign-in-professional') }}">Cuenta Profesionista</a></li>
+                        @endguest
+                        @auth
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ route('contactanos') }}">Contáctanos</a></li>
+                        <li><a href="{{ route('favoritos') }}">Servicios Favoritos</a></li>
+                        <li><a href="{{ route('agenda') }}">Servicios Agendados</a></li>
                         <li><a href="{{ route('updateprofile') }}">Cuenta</a></li>
                         <li><a href="{{ route('sign-in-professional') }}">Cuenta Profesionista</a></li>
+                        @endauth
                     </ul>
                 </div>
                 <!-- Servicios Populares -->

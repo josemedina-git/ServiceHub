@@ -213,47 +213,29 @@
                                 <!-- Card conteniendo el formulario -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Formulario de Servicios</h5>
-                                        <form id="formulario" onsubmit="mostrarConfirmacion(event)">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="password" class="text-black fw-bold">Servicio</label>
-                                                    <input type="text" class="form-control custom-input" id="serv"
-                                                        placeholder="Nombre">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="phone" class="text-black fw-bold">Número de
-                                                        télefono</label>
-                                                    <input type="phone" class="form-control custom-input" id="phone"
-                                                        placeholder="Télefono">
-                                                </div>
-                                            </div>
+                                    <h5 class="card-title text-center mb-4">Formulario de Servicios</h5>
+                                    <form id="formulario" action="" method="POST">
+                                        @csrf
+                                        <label for="serv">Nombre del Servicio:</label>
+                                        <input type="text" id="serv" name="serv" required>
 
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="email" class="text-black fw-bold">Correco
-                                                        eléctronico</label>
-                                                    <input type="email" class="form-control custom-input" id="email"
-                                                        placeholder="Correo">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="price" class="text-black fw-bold">Precio</label>
-                                                    <input type="text" class="form-control custom-input" id="price"
-                                                        placeholder="Precio">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="comentarios">Descripción</label>
-                                                <textarea id="comentarios" class="form-control" rows="4"
-                                                    placeholder="Describe tu servicio aquí..."></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-info">Enviar</button>
-                                        </form>
+                                        <label for="phone">Teléfono:</label>
+                                        <input type="text" id="phone" name="phone" required>
+
+                                        <label for="email">Correo Electrónico:</label>
+                                        <input type="email" id="email" name="email" required>
+
+                                        <label for="price">Precio:</label>
+                                        <input type="number" id="price" name="price" required>
+
+                                        <label for="descripcion">Descripción:</label>
+                                        <textarea id="descripcion" name="descripcion" required></textarea>
+
+                                        <button type="submit">Guardar Servicio</button>
+                                    </form>
+
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <!-- Card de confirmación modal, inicialmente oculta -->
