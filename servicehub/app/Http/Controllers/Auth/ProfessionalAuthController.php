@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Profesional;
+use App\Models\Professional;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -25,7 +25,7 @@ class ProfessionalAuthController extends Controller
             'Password' => 'required|string|min:5|confirmed',
         ]);
 
-        $professional = Profesional::create([
+        $professional = Professional::create([
             'FirstName' => $request->FirstName,
             'LastName' => $request->LastName,
             'CURP' => $request->CURP,
@@ -53,7 +53,7 @@ class ProfessionalAuthController extends Controller
             'Password' => 'required'
         ]);
 
-        $professional = Profesional::where('Email', $request->Email)->first();
+        $professional = Professional::where('Email', $request->Email)->first();
 
         if (!$professional || !Hash::check($request->Password, $professional->Password)) {
             throw ValidationException::withMessages([
