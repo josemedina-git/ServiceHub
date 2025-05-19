@@ -24,14 +24,13 @@ class Professional extends Authenticatable
         'Password',
     ];
     
-
     protected $hidden = [
         'Password',
         'remember_token',
     ];
 
     protected $casts = [
-        'Password' => 'hashed',
+        'Password' => 'hashed', // Asegura que la contraseña siempre se encripta
     ];
 
     public function getAuthPassword()

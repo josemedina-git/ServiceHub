@@ -14,7 +14,7 @@
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ route('contactanos') }}">Contáctanos</a></li>
                         <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
-                        <li><a href="{{ route('singup') }}">Registrarse</a></li>
+                        <li><a href="{{ route('register') }}">Registrarse</a></li>
                         <li><a href="{{ route('sign-in-professional') }}">Cuenta Profesionista</a></li>
                         @endguest
                         @auth

@@ -25,6 +25,10 @@ class Client extends Authenticatable
         'Password',
     ];
 
+    protected $casts = [
+        'Password' => 'hashed', // Asegura que la contraseña siempre se encripte
+    ];
+
     public function getAuthPassword()
     {
         return $this->Password;

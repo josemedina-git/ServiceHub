@@ -21,46 +21,61 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        // Validación de datos de entrada
+        $validatedData = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        $client = Client::where('Email', $credentials['email'])->first();
+        // Buscar el cliente utilizando parámetros preparados (protección contra inyección SQL)
+        $client = Client::where('Email', $validatedData['email'])->first();
 
-        if (!$client || !Hash::check($credentials['password'], $client->Password)) {
+        if (!$client || !Hash::check($validatedData['password'], $client->Password)) {
             return back()->withErrors(['email' => 'Credenciales incorrectas']);
         }
 
         Auth::login($client);
-        return redirect()->route('favorite'); // Cambia a la ruta de tu panel principal
+        // Regenerar la sesión para prevenir ataques de fijación de sesión
+        $request->session()->regenerate();
+        
+        return redirect()->route('favorite');
     }
 
     public function register(Request $request)
     {
-        $request->validate([
+        // Validación extendida para mayor seguridad
+        $validatedData = $request->validate([
             'name' => 'required|string|max:100',
             'surname' => 'required|string|max:100',
             'email' => 'required|email|unique:clients,Email|max:150',
             'phone' => 'required|string|max:15',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:8|confirmed', // Aumentado a 8 caracteres mínimo
         ]);
 
+        // Crear cliente con contraseña encriptada
         $client = Client::create([
-            'FirstName' => $request->name,
-            'LastName' => $request->surname,
-            'Email' => $request->email,
-            'PhoneNumber' => $request->phone,
-            'Password' => Hash::make($request->password),
+            'FirstName' => $validatedData['name'],
+            'LastName' => $validatedData['surname'],
+            'Email' => $validatedData['email'],
+            'PhoneNumber' => $validatedData['phone'],
+            'Password' => Hash::make($validatedData['password']), // Encriptación segura de contraseña
         ]);
 
         Auth::login($client);
+        // Regenerar la sesión para prevenir ataques de fijación de sesión
+        $request->session()->regenerate();
+        
         return redirect()->route('favorite');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
+        
+        // Invalidar la sesión y regenerar el token CSRF
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
         return redirect()->route('login');
     }
 }

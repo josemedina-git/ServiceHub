@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\ServiceController;
 use App\Http\Controllers\AgendaController;
 use App\Models\Category;
 
+
 Route::get('/agendar/{service}', [AgendaController::class, 'create'])->name('agenda.create');
 Route::post('/agendar', [AgendaController::class, 'store'])->name('agenda.store');
 
@@ -33,6 +34,7 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+// MANTÉN EL NOMBRE ORIGINAL DE ESTA RUTA (singup en lugar de signup)
 Route::get('/singup', action: function () {
     return view('singup');
 })->name('singup');
@@ -69,8 +71,6 @@ Route::get('/profileservice', action: function () {
     return view('profileservice');
 })->name('profileservice');
 
-
-
 //login y registro cliente
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -88,7 +88,6 @@ Route::get('/dashboard', function () {
     return view('index');
 })->middleware('auth')->name('dashboard');
 
-
 //login y registro profesional
 use App\Http\Controllers\Auth\ProfessionalAuthController;
 
@@ -99,7 +98,6 @@ Route::get('/registrarseProfesional', action: function () {
 Route::get('/IniciarSesionProfesional', action: function () {
     return view('pages.sign-in-professional');
 })->name('IniciarSesionProfesional');
-
 
 Route::prefix('professional')->group(function () {
     Route::post('/register', [ProfessionalAuthController::class, 'register'])->name('professional.register');
@@ -114,7 +112,6 @@ Route::get('/Professionaldashboard', action: function () {
 Route::post('/logoutProfessional', [ProfessionalAuthController::class, 'logout'])->name('logoutProfessional');
 
 //navbars profesional
-
 Route::get('/TableProfessional', action: function () {
     return view('pages.profesionalTables.Tableprofessional');
 })->name('TableProfessional');

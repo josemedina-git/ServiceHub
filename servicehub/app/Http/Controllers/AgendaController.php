@@ -19,36 +19,39 @@ class AgendaController extends Controller
 
         return view('agenda', compact('agendas'));
     }
+    
     public function create(Service $service)
     {
+        // Laravel automáticamente valida el ID del servicio
         return view('agendar', compact('service'));
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'service_id' => 'required|exists:services,IdService',
-        'agendaFecha' => 'required|date',
-    ]);
+    {
+        // Validación de datos de entrada
+        $validatedData = $request->validate([
+            'service_id' => 'required|exists:services,IdService',
+            'agendaFecha' => 'required|date',
+        ]);
 
-    $agenda = new Agenda();
-    $agenda->IdService = $request->service_id;
-    $agenda->DateAgenda = $request->agendaFecha;
-    $agenda->IdClient = Auth::guard('client')->id();  // Ensure auth is configured for the client.
-    $agenda->save();
+        // Crear agenda con datos validados
+        $agenda = new Agenda();
+        $agenda->IdService = $validatedData['service_id'];
+        $agenda->DateAgenda = $validatedData['agendaFecha'];
+        $agenda->IdClient = Auth::guard('client')->id();
+        $agenda->save();
 
-    // Retrieve the authenticated client
-    $client = Auth::guard('client')->user();
+        // Recuperar el cliente autenticado
+        $client = Auth::guard('client')->user();
 
-    // Ensure the client object is not null and has an email property
-    if ($client && isset($client->Email)) {
-        // Send email to the client
-        Mail::to($client->Email)->send(new AgendaMail($agenda, $agenda->service->NameService, $agenda->DateAgenda));
-    } else {
-        // Handle the case where the client or email is not available
-        return redirect()->route('home')->with('error', 'No se pudo enviar el correo. Verifica tu cuenta.');
+        // Verificar que el cliente exista y tenga un email
+        if ($client && isset($client->Email)) {
+            // Enviar email al cliente
+            Mail::to($client->Email)->send(new AgendaMail($agenda, $agenda->service->NameService, $agenda->DateAgenda));
+        } else {
+            return redirect()->route('home')->with('error', 'No se pudo enviar el correo. Verifica tu cuenta.');
+        }
+
+        return redirect()->route('home')->with('success', '¡Servicio agendado exitosamente!');
     }
-
-    return redirect()->route('home')->with('success', '¡Servicio agendado exitosamente!');
-}
 }

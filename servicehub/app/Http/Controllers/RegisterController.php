@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client; // Importar el modelo de Client
+use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -11,28 +11,28 @@ class RegisterController extends Controller
 {
     public function register(Request $request)
     {
-        // Validar los datos del formulario
-        $request->validate([
+        // Validación mejorada
+        $validatedData = $request->validate([
             'first_name' => 'required|string|max:100',
             'last_name' => 'required|string|max:100',
-            'email' => 'required|string|email|max:150|unique:clients',
+            'email' => 'required|string|email|max:150|unique:clients,Email',
             'phone_number' => 'required|string|max:15',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8|confirmed', // Aumentado a 8 caracteres mínimo
         ]);
 
-        // Crear el nuevo cliente
+        // Crear cliente con contraseña encriptada
         $client = Client::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'password' => Hash::make($request->password), // Encriptar contraseña
+            'FirstName' => $validatedData['first_name'],
+            'LastName' => $validatedData['last_name'],
+            'Email' => $validatedData['email'],
+            'PhoneNumber' => $validatedData['phone_number'],
+            'Password' => Hash::make($validatedData['password']), // Encriptación segura de contraseña
         ]);
 
-        // Iniciar sesión automáticamente después del registro
+        // Iniciar sesión y regenerar sesión
         Auth::guard('client')->login($client);
+        $request->session()->regenerate();
 
-        // Redirigir al dashboard o a la página de inicio
         return redirect()->route('dashboard')->with('success', 'Registro exitoso');
     }
 }

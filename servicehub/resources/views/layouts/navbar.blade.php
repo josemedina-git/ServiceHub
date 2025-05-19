@@ -28,7 +28,7 @@
                             <a class="nav-link" href="{{ route('login') }}"> <i class=" fas fa-sign-in-alt"></i> Iniciar Sesión</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('singup') }}"> <i class=" fas fa-user-plus"></i> Registrarse</a>
+                            <a class="nav-link" href="{{ route('register') }}"> <i class=" fas fa-user-plus"></i> Registrarse</a>
                         </li>
                         @endguest
                         @auth
